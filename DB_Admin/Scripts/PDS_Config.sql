@@ -12,12 +12,12 @@ Post-Deployment Script Template
 
 SET IDENTITY_INSERT config.Cities ON
 GO
-INSERT INTO config.Cities (CityId, CityName)
-VALUES  (1, 'Oxford')
-,       (2, 'Cambridge')
-,       (3, 'Bradford')
-,       (4, 'Southampton')
-,       (5, 'Whitby')
+INSERT INTO config.Cities (CityId, CityName, CountryName)
+VALUES  (1, 'Oxford', 'United Kingdom')
+,       (2, 'Cambridge', 'United Kingdom')
+,       (3, 'Bradford', 'United Kingdom')
+,       (4, 'Southampton', 'United Kingdom')
+,       (5, 'Chivenor', 'United Kingdom')
 GO
 SET IDENTITY_INSERT config.Cities OFF
 GO
@@ -36,10 +36,10 @@ VALUES  (1, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationd
 ,       (2, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/cambridgedata.txt')
 ,       (3, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt')
 ,       (4, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/southamptondata.txt')
-,       (5, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/whitbydata.txt')
+,       (5, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/chivenordata.txt')
 ,       (1, 2, 'https://openweathermap.org/city/2640729')
 ,       (2, 2, 'https://openweathermap.org/city/2653941')
 ,       (3, 2, 'https://openweathermap.org/city/2654993')
 ,       (4, 2, 'https://openweathermap.org/city/2637487')
-,       (5, 2, 'https://openweathermap.org/city/2634135')
+,       (5, 2, 'https://openweathermap.org/city/2656281')
 GO
