@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>DB_Staging</Name>
+    <Name>SN_DWH</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{3be2a8b5-41c7-4cdf-94e6-1941317f9419}</ProjectGuid>
+    <ProjectGuid>{8f118d7d-2757-4250-ad61-9352c30d4ebb}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>DB_Staging</RootNamespace>
-    <AssemblyName>DB_Staging</AssemblyName>
+    <RootNamespace>SN_DWH</RootNamespace>
+    <AssemblyName>SN_DWH</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -59,13 +59,17 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="staging\" />
-    <Folder Include="staging\Tables\" />
+    <Folder Include="olap\" />
+    <Folder Include="olap\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="staging\Tables\MetOffice.sql" />
-    <Build Include="Security\staging.sql" />
-    <Build Include="staging\Tables\OpenWeather_Current.sql" />
+    <Build Include="olap\Tables\DimDate.sql" />
+    <Build Include="Security\olap.sql" />
+    <Build Include="olap\Tables\DimTime.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
   </ItemGroup>
 </Project>

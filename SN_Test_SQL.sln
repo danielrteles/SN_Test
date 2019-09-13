@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_Staging", "DB_Staging\DB
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_ETL", "SSIS_ETL\SSIS_ETL.dtproj", "{7B5A691C-C13A-4C38-B7D0-49186F5A4F17}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SN_DWH", "SN_DWH\SN_DWH.sqlproj", "{8F118D7D-2757-4250-AD61-9352C30D4EBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,15 @@ Global
 		{7B5A691C-C13A-4C38-B7D0-49186F5A4F17}.Development|Any CPU.Build.0 = Development
 		{7B5A691C-C13A-4C38-B7D0-49186F5A4F17}.Release|Any CPU.ActiveCfg = Development
 		{7B5A691C-C13A-4C38-B7D0-49186F5A4F17}.Release|Any CPU.Build.0 = Development
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F118D7D-2757-4250-AD61-9352C30D4EBB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
