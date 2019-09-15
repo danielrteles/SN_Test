@@ -5,132 +5,20 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-BJEU414"
   DTS:CreatorName="DESKTOP-BJEU414\danie"
-  DTS:DTSID="{DB4ECAEC-C5E6-403F-A2E7-A8CF2C0C61B7}"
+  DTS:DTSID="{29319411-3767-4C55-AA71-CA8EB8572BB3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3002.113"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Staging_OpenWeather"
+  DTS:ObjectName="Staging_OpenWeather_Forecast"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{E5848AEF-043F-4EFE-84F6-00361B76F91A}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{AAC6BFF0-C300-4FD2-B20C-3552C6A924E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[HTTP Connection]"
-      DTS:CreationName="HTTP"
-      DTS:DTSID="{055385AF-BC46-4259-8613-7C1B47CB5352}"
-      DTS:ObjectName="HTTP Connection">
-      <DTS:PropertyExpression
-        DTS:Name="ServerURL">@[User::CityFileURL]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager>
-          <DTS:HttpConnection
-            DTS:ServerURL="">
-            <DTS:Property
-              DTS:Name="ServerPassword"
-              Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADW9nHPgdcBBpOmwN8vKceNccMQrVMpWoSh4YCU9F3QXgAAAAAOgAAAAAIAACAAAADbDCBpE+5kMD+FVl1Looz246nm6KsppREEIbfmbtxsSxAAAACGztnURUbMFCVS9hp4jteBQAAAAJsAOvgGuxWxkKTX8Zyp+gLxURivmHLXH/90D8bkwELtqsGCtVkWf3mCvSNereFM6bW0f6Csa1H0ZkBprkloYZY</DTS:Property>
-            <DTS:Property
-              DTS:Name="ProxyPassword"
-              Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/r1gJSn/sk+qIQrpoLvQkK3I6tt4lrYcnb52Q2FoB8gAAAAAOgAAAAAIAACAAAADdM0BVt2n1FeYOWrbQoAS8k31ek+rEfPSzJqE+G0+fihAAAAA1FzVCAtYlUxfKLnsOLKebQAAAACwfvmYrnK+6PhSOfzHUlq9QLhozU/KbxJhOc3/wdd73WzIjFLfp2lNU3klpBKid4ycnggGTNMdKSsZziIlepEk</DTS:Property>
-          </DTS:HttpConnection>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[MetOffice File]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{C296D568-5165-4F11-A3F5-A508D6C98706}"
-      DTS:ObjectName="MetOffice File">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::CurrentFileName]</DTS:PropertyExpression>
-      <DTS:PropertyExpression
-        DTS:Name="DataRowsToSkip">@[User::StartFrom]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="RaggedRight"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter="_x000D__x000A_"
-          DTS:DataRowsToSkip="1"
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\TEMP\SN_Test\OpenWeather_Current_.txt">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="7"
-              DTS:MaximumWidth="7"
-              DTS:DataType="129"
-              DTS:ObjectName="Year"
-              DTS:DTSID="{F8307611-B0F2-41BF-827F-978B999C4D69}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="4"
-              DTS:MaximumWidth="4"
-              DTS:DataType="129"
-              DTS:ObjectName="Month"
-              DTS:DTSID="{07947500-1219-4211-95D4-62F30A652394}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="7"
-              DTS:MaximumWidth="7"
-              DTS:DataType="129"
-              DTS:ObjectName="MaxTemp"
-              DTS:DTSID="{F0ADE5A3-17AB-4904-BCFA-7EB652E69971}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="8"
-              DTS:MaximumWidth="8"
-              DTS:DataType="129"
-              DTS:ObjectName="MinTemp"
-              DTS:DTSID="{49E53CB1-2A15-4D31-B864-117D9FCCF993}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="8"
-              DTS:MaximumWidth="8"
-              DTS:DataType="129"
-              DTS:ObjectName="AF"
-              DTS:DTSID="{B5355D3A-F21D-4133-BB72-42BE93E5B489}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="8"
-              DTS:MaximumWidth="8"
-              DTS:DataType="129"
-              DTS:ObjectName="Rain"
-              DTS:DTSID="{50DAA739-902B-46B7-9514-341B178C93B5}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="8"
-              DTS:MaximumWidth="8"
-              DTS:DataType="129"
-              DTS:ObjectName="SunHours"
-              DTS:DTSID="{0ED35332-7B1F-4472-84C6-60B2BA0F1E6C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="129"
-              DTS:ObjectName="Column 0"
-              DTS:DTSID="{4D57F4E6-E9C5-4E3A-9D18-C66089B683E6}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{90D4878D-0D1A-4759-B959-FAF1683D5BB8}"
+      DTS:DTSID="{9FA9FDF1-BDA5-419D-A29F-7B8181436DE3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CityFileURL">
@@ -140,7 +28,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DDE97CD8-B572-4996-9E59-5DDAF92201FA}"
+      DTS:DTSID="{332DFCB7-3F5F-4279-A2C4-22D3164CF5E5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CityName">
@@ -150,7 +38,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5E1DAADE-2E36-43C9-827D-0B444D2E8DF1}"
+      DTS:DTSID="{D5377CCA-08E2-44D1-956F-D148728D0E3C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CountryName">
@@ -160,7 +48,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A6A17BF8-6F3E-4B92-AFBE-9CAE88B5885D}"
+      DTS:DTSID="{4B20C7CA-5C33-4A72-BF48-200A5049E49F}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(RIGHT(@[$Project::TempFolder],1) == &quot;\\&quot; ? @[$Project::TempFolder] : @[$Project::TempFolder] + &quot;\\&quot;) + &quot;OpenWeather_Current_&quot; + @[User::CityName] + &quot;.txt&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -171,7 +59,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EE1F2921-F5E2-4ABF-AD2B-05B3D738DC00}"
+      DTS:DTSID="{2822DAAA-A029-43A7-92F6-C68A1AD14717}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="JsonContent">
@@ -189,7 +77,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0C4EFD76-DD88-41FC-BE57-7BD7FF75C3F6}"
+      DTS:DTSID="{0F835EA1-CBF3-4DE7-840E-C6FC2403C289}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ListOfCitiesAndURLs">
@@ -211,14 +99,14 @@
       DTS:refId="Package\FELC"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{F56D467C-C8A0-4CCB-9223-7BF4CB36C6A5}"
+      DTS:DTSID="{E118A474-F864-45F0-B156-4623AE1048FE}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="FELC">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{958B0029-958B-4233-BADB-BA6B237AA19B}"
-        DTS:ObjectName="{958B0029-958B-4233-BADB-BA6B237AA19B}">
+        DTS:DTSID="{C9392B1A-5BB6-48A0-9880-4B1FD4AB339A}"
+        DTS:ObjectName="{C9392B1A-5BB6-48A0-9880-4B1FD4AB339A}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -231,7 +119,7 @@
           DTS:refId="Package\FELC\DFT Stage File"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{D9D4FE2A-2737-4BA7-A7F8-5F9BCD9409CF}"
+          DTS:DTSID="{20306887-6154-4F7D-BFBE-778C414E701D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT Stage File"
@@ -645,7 +533,7 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"0:Input",{EE1F2921-F5E2-4ABF-AD2B-05B3D738DC00};</property>
+                      name="ParameterMapping">"0:Input",{2822DAAA-A029-43A7-92F6-C68A1AD14717};</property>
                   </properties>
                   <connections>
                     <connection
@@ -800,7 +688,7 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
           DTS:refId="Package\FELC\SCR Get Json"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{FD599568-BAD0-4E0E-87B6-7A735A288864}"
+          DTS:DTSID="{34B41DC3-7EB1-46B4-A7EA-ABC34650D3C6}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR Get Json"
@@ -1028,12 +916,6 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Net.Http" version="4.3.4" targetFramework="net45" />
-</packages>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1213,7 +1095,7 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
     <msb:CodeName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:DisplayName>
-    <msb:ProjectId>{BAA14462-E30E-4509-98D8-6B7827AA5F18}</msb:ProjectId>
+    <msb:ProjectId>{761868F8-1C9E-4D44-BDE3-20061654781F}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_abacfdc674a64bdd8d748277951d3a3c.csproj" />
@@ -1227,6 +1109,12 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Net.Http" version="4.3.4" targetFramework="net45" />
+</packages>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -1337,7 +1225,7 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0.Properties {
               <BinaryItem
                 Name="ST_abacfdc674a64bdd8d748277951d3a3c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE3wfV0AAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAUjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDALDwfV0AAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAUjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAAxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1373,7 +1261,7 @@ BgApAHsA/gAuAAsA1gAuABMA3wAuABsA/gAuACMABwEuACsAMAEuADMAMAEuADsAMAEuAEMABwEu
 AEsANgEuAFMAMAEuAFsATQFDAGMAlwFJAHsA/gBhAGsAlwFjAHMAlwGBAGsAlwGhAGsAlwFAAWsA
 lwFgAWsAlwGAAWsAlwGgAWsAlwEbAAMAAQAEAAMABQAEAAAAlAS+AAAASQHDAAAA8wXIAAAA/wDN
 AAAAwwXRAAIABAADAAIABQAFAAEABgAFAAIABwAHAAIACgAJAAEACwAJAAIADAALAAEADQALAASA
-AAABAAAAHRyuPwAAAAAAAFYAAAAEAAAAAAAAAAAAAAB4AE0AAAAAAA4AAAAAAAAAAAAAAIEAfwMA
+AAABAAAAHRzgPwAAAAAAAFYAAAAEAAAAAAAAAAAAAAB4AE0AAAAAAA4AAAAAAAAAAAAAAIEAfwMA
 AAAABAAAAAAAAAAAAAAAeAAgBAAAAAAOAAAAAAAAAAAAAACBAC4AAAAAAAAAAAABAAAAEwUAAAUA
 AgAAAABTVF9mODQ2NTNhZmNkNDc0YzBlOTU0MTc4NzdjM2Y0YTlmMAA8TW9kdWxlPgBNaWNyb3Nv
 ZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAbXNjb3JsaWIAU1RfYWJhY2ZkYzY3NGE2NGJkZDhkNzQ4
@@ -1409,7 +1297,7 @@ ZQBjAHQAOgA6AEEAcABpAEkAZAAADyYAYQBwAHAAaQBkAD0AACNVAHMAZQByADoAOgBKAHMAbwBu
 AEMAbwBuAHQAZQBuAHQAABlTAEMAUgAgAEcAZQB0ACAASgBzAG8AbgAAL0UAcgByAG8AcgAgAGQA
 dQByAGkAbgBnACAAQQBQAEkAIABjAGEAbABsADoAIAAAcVMAVABfAGYAOAA0ADYANQAzAGEAZgBj
 AGQANAA3ADQAYwAwAGUAOQA1ADQAMQA3ADgANwA3AGMAMwBmADQAYQA5AGYAMAAuAFAAcgBvAHAA
-ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAANrUfZqbMNxFpemmKEd33JMABCABAQgD
+ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAABHwVP00a0tLk/eeEj3AffgABCABAQgD
 IAABBSABARERBCABAQ4FIAEBEVUHBwQODg4SPQQgABJhBCAAEmUFIAESaRwDIAAcAyAADgYAAw4O
 Dg4EIAEODgQgAQEcBCAAEnUFAAIODg4CBg4IIAUCCA4ODggGAAESeRF9BSAAEoCBByACAQ4SgIEI
 t3pcVhk04IkIiYRdzYCAzJEDBhJNAwYSUQMGEhADBh0OBAAAEk0EAAASUQUAAQESUQQAABIQAwAA
@@ -1427,14 +1315,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAK4/HRwAAAEArj8dHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAOA/HRwAAAEA4D8dHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3ADcA
 YwAzAGYANABhADkAZgAwAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADcAMQA5ADcALgAxADYAMwAwADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+ADcAMQA5ADcALgAxADYAMwA1ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
 UwBUAF8AYQBiAGEAYwBmAGQAYwA2ADcANABhADYANABiAGQAZAA4AGQANwA0ADgAMgA3ADcAOQA1
 ADEAZAAzAGEAMwBjAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
 AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADkAAAAqAAEAAQBMAGUAZwBhAGwAVABy
@@ -1443,8 +1331,8 @@ YQBtAGUAAABTAFQAXwBhAGIAYQBjAGYAZABjADYANwA0AGEANgA0AGIAZABkADgAZAA3ADQAOAAy
 ADcANwA5ADUAMQBkADMAYQAzAGMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
 ZQAAAAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3
 ADcAYwAzAGYANABhADkAZgAwAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA3ADEAOQA3AC4AMQA2ADMAMAAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
-AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADEAOQA3AC4AMQA2ADMAMAAyAAAAAAAAAAAAAAAAAAAA
+MQAuADAALgA3ADEAOQA3AC4AMQA2ADMANQAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADEAOQA3AC4AMQA2ADMANQAyAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1469,7 +1357,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FELC.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{9BA9B75F-2C75-41B9-851E-EF1C0DEDD942}"
+          DTS:DTSID="{6E55DFB6-05BA-4912-8CC7-13BDACD1057E}"
           DTS:From="Package\FELC\SCR Get Json"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1478,20 +1366,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{FAC02BEE-E7A3-43D3-9FC7-64AB3836DED5}"
-          DTS:ObjectName="{FAC02BEE-E7A3-43D3-9FC7-64AB3836DED5}"
+          DTS:DTSID="{FABAD803-DB2A-448F-BB8E-00944CA9C88F}"
+          DTS:ObjectName="{FABAD803-DB2A-448F-BB8E-00944CA9C88F}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CityName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{1BF6337C-E0BD-4598-9AB8-C4D99E24813D}"
-          DTS:ObjectName="{1BF6337C-E0BD-4598-9AB8-C4D99E24813D}"
+          DTS:DTSID="{CA49FBB3-E90F-4358-9B51-6C74E6FAF1A5}"
+          DTS:ObjectName="{CA49FBB3-E90F-4358-9B51-6C74E6FAF1A5}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::CityFileURL" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{007782AF-F9F5-4206-8480-F97974B686EA}"
-          DTS:ObjectName="{007782AF-F9F5-4206-8480-F97974B686EA}"
+          DTS:DTSID="{76143D5B-D967-4B16-8F4D-572B23AB2F45}"
+          DTS:ObjectName="{76143D5B-D967-4B16-8F4D-572B23AB2F45}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::CountryName" />
       </DTS:ForEachVariableMappings>
@@ -1500,7 +1388,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:refId="Package\SQL Get Cities and URLs"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6B8DFA3E-CB27-4554-BFA8-BB427111E443}"
+      DTS:DTSID="{B30FB3CD-3FC7-42E4-8075-84E915A4BF54}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Get Cities and URLs"
@@ -1522,7 +1410,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:refId="Package\SQL Truncate Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{11274A9A-335E-43E0-8B79-1B0661090EE1}"
+      DTS:DTSID="{AA7429C6-E4D8-4804-9E02-25E9751802D8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate Staging"
@@ -1540,7 +1428,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{4E4E1EC8-2A5C-4AD7-BE75-290CDDA7AB28}"
+      DTS:DTSID="{99D43528-B45F-466C-ACB6-E9B054722DC4}"
       DTS:From="Package\SQL Get Cities and URLs"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1548,7 +1436,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{813E0ACF-3944-4147-BF4B-5F565A298038}"
+      DTS:DTSID="{ABE88436-4F6A-438B-AC0B-F69F1A23DFE7}"
       DTS:From="Package\SQL Truncate Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
