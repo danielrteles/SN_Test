@@ -11,26 +11,10 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="DWH_Load_DimGeography"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{F51C7D86-7BD0-4ED2-83E9-C2F0564D3769}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{BB0A0A22-EBC5-4831-ABCB-908158C58FE1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DWHDB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}"
-      DTS:ObjectName="DWHDB">
-      <DTS:PropertyExpression
-        DTS:Name="InitialCatalog">@[$Project::DataWarehouseDB]</DTS:PropertyExpression>
-      <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SN_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -117,8 +101,8 @@ where [refTable].[CityName] = ? and [refTable].[CountryName] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT Load DimGeography\LKP Current Dimension.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DWHDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DWHDB]"
+                  connectionManagerID="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHDB]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -283,8 +267,8 @@ where [refTable].[CityName] = ? and [refTable].[CountryName] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT Load DimGeography\OLE_DST DimGeography.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DWHDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DWHDB]"
+                  connectionManagerID="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -628,7 +612,7 @@ SELECT CityName, CountryName FROM staging.OpenWeather_Forecast</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -638,7 +622,7 @@ SELECT CityName, CountryName FROM staging.OpenWeather_Forecast</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

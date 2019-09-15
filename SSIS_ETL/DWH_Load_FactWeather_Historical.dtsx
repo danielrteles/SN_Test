@@ -1,0 +1,2259 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/15/2019 10:07:39 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BJEU414"
+  DTS:CreatorName="DESKTOP-BJEU414\danie"
+  DTS:DTSID="{FE25FDF6-AD1A-4CB1-8EE1-F77EA61D3E41}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="DWH_Load_FactWeather_Historical"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{2C027FDC-E8AF-4983-A43C-4E36EB505A3B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Load Transform table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0FE5D344-585C-4267-A7BF-C2CA40FB4B17}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Load Transform table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Load Transform table\ALL With Actions"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="ALL With Actions"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CityName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CityName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[FullDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[FullDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[TMaxDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMaxDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMaxDegC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMaxDegC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[TMinDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMinDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMinDegC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMinDegC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[AFDays]"
+                      cachedDataType="ui1"
+                      cachedName="AFDays"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[AFDays]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[AFDays]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[RainMm]"
+                      cachedDataType="numeric"
+                      cachedName="RainMm"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[RainMm]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[RainMm]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[SunHours]"
+                      cachedDataType="numeric"
+                      cachedName="SunHours"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[SunHours]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[SunHours]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[HashValue]"
+                      cachedDataType="i8"
+                      cachedName="HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[HashValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[Existing_HashValue]"
+                      cachedDataType="i8"
+                      cachedName="Existing_HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[Existing_HashValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1].Columns[DER_Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DER_Action"
+                      lineageId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Output].Columns[DER_Action]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[DER_Action]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CityName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CityName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CountryName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CountryName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[FullDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[FullDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[TMaxDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMaxDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMaxDegC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMaxDegC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[TMinDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMinDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMinDegC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMinDegC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[AFDays]"
+                      cachedDataType="ui1"
+                      cachedName="AFDays"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[AFDays]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[AFDays]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[RainMm]"
+                      cachedDataType="numeric"
+                      cachedName="RainMm"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[RainMm]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[RainMm]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[SunHours]"
+                      cachedDataType="numeric"
+                      cachedName="SunHours"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[SunHours]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[SunHours]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[HashValue]"
+                      cachedDataType="i8"
+                      cachedName="HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[HashValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[Existing_HashValue]"
+                      cachedDataType="i8"
+                      cachedName="Existing_HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[Existing_HashValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2].Columns[DER_Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DER_Action"
+                      lineageId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Output].Columns[DER_Action]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[DER_Action]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CityName]"
+                      name="CityName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CountryName]"
+                      name="CountryName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[FullDate]"
+                      name="FullDate" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMaxDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMaxDegC]"
+                      name="TMaxDegC"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMinDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMinDegC]"
+                      name="TMinDegC"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[AFDays]"
+                      dataType="ui1"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[AFDays]"
+                      name="AFDays" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[RainMm]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[RainMm]"
+                      name="RainMm"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[SunHours]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[SunHours]"
+                      name="SunHours"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[HashValue]"
+                      name="HashValue" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[Existing_HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[Existing_HashValue]"
+                      name="Existing_HashValue" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[DER_Action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[DER_Action]"
+                      name="DER_Action" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\CSPL Check new records"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="CSPL Check new records"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input].Columns[HashValue]"
+                      cachedDataType="i8"
+                      cachedName="HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input].Columns[Existing_HashValue]"
+                      cachedDataType="i8"
+                      cachedName="Existing_HashValue"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[New Records]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="New Records"
+                  synchronousInputId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Existing_HashValue)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Updated Records]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Updated Records"
+                  synchronousInputId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]} != #{Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">HashValue != Existing_HashValue</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Unchanged records]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Unchanged records"
+                  synchronousInputId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\DER Insert"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER Insert"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\DER Insert.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Load Transform table\DER Insert.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Output].Columns[DER_Action]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Output].Columns[DER_Action]"
+                      name="DER_Action"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,1,1252)"I"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)"I"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Load Transform table\DER Insert.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\DER Update"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER Update"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\DER Update.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Load Transform table\DER Update.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Output].Columns[DER_Action]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Output].Columns[DER_Action]"
+                      name="DER_Action"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,1,1252)"U"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)"U"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Load Transform table\DER Update.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\MRGJ Match Existing"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="MRGJ Match Existing"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CityName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CountryName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[FullDate]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[TMaxDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMaxDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMaxDegC]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[TMinDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMinDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMinDegC]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[AFDays]"
+                      cachedDataType="ui1"
+                      cachedName="AFDays"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[AFDays]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[RainMm]"
+                      cachedDataType="numeric"
+                      cachedName="RainMm"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[RainMm]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[SunHours]"
+                      cachedDataType="numeric"
+                      cachedName="SunHours"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[SunHours]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[HashValue]"
+                      cachedDataType="i8"
+                      cachedName="HashValue"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[HashValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CityName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CountryName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[FullDate]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input].Columns[HashValue]"
+                      cachedDataType="i8"
+                      cachedName="HashValue"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[HashValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CityName]"
+                      name="CityName"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[CityName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[CountryName]"
+                      name="CountryName"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[CountryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[FullDate]"
+                      name="FullDate"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[FullDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMaxDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMaxDegC]"
+                      name="TMaxDegC"
+                      precision="4"
+                      scale="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[TMaxDegC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMinDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[TMinDegC]"
+                      name="TMinDegC"
+                      precision="4"
+                      scale="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[TMinDegC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[AFDays]"
+                      dataType="ui1"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[AFDays]"
+                      name="AFDays">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[AFDays]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[RainMm]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[RainMm]"
+                      name="RainMm"
+                      precision="4"
+                      scale="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[RainMm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[SunHours]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[SunHours]"
+                      name="SunHours"
+                      precision="4"
+                      scale="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[SunHours]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[HashValue]"
+                      name="HashValue">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input].Columns[HashValue]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output].Columns[Existing_HashValue]"
+                      name="Existing_HashValue">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input].Columns[HashValue]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[transform].[FactWeather_Historical]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Load Transform table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CityName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[CountryName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullDate]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[FullDate]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RainMm]"
+                      cachedDataType="numeric"
+                      cachedName="RainMm"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RainMm]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[RainMm]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SunHours]"
+                      cachedDataType="numeric"
+                      cachedName="SunHours"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SunHours]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[SunHours]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DER_Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DER_Action"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordAction]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[DER_Action]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TMinDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMinDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MinTemperature]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMinDegC]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TMaxDegC]"
+                      cachedDataType="numeric"
+                      cachedName="TMaxDegC"
+                      cachedPrecision="4"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaxTemperature]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[TMaxDegC]" />
+                    <inputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AFDays]"
+                      cachedDataType="ui1"
+                      cachedName="AFDays"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirFrostDays]"
+                      lineageId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1].Columns[AFDays]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordAction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="RecordAction" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullDate]"
+                      dataType="dbDate"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MinTemperature]"
+                      dataType="numeric"
+                      name="MinTemperature"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaxTemperature]"
+                      dataType="numeric"
+                      name="MaxTemperature"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirFrostDays]"
+                      dataType="ui1"
+                      name="AirFrostDays" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RainMm]"
+                      dataType="numeric"
+                      name="RainMm"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SunHours]"
+                      dataType="numeric"
+                      name="SunHours"
+                      precision="4"
+                      scale="1" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC Existing Fact Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  dg.CityName
+,       dg.CountryName
+,       dd.FullDate
+,       CONVERT(BIGINT, HASHBYTES('SHA2_512', CONCAT(MinTemperature, MaxTemperature, AirFrostDays, RainMm, SunHours))) AS HashValue
+FROM    olap.FactWeather_Historical fwh
+JOIN    olap.DimGeography dg ON fwh.GeographyKey = dg.GeographyKey
+JOIN    olap.DimDate dd ON fwh.DateKey = dd.DateKey
+ORDER BY dg.CityName
+,       dg.CountryName
+,       dd.FullDate</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Connections[OleDbConnection]"
+                  connectionManagerID="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[CityName]"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CityName]"
+                      name="CityName"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      name="CountryName"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      name="FullDate"
+                      sortKeyPosition="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[HashValue]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[HashValue]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].Columns[HashValue]"
+                      name="HashValue"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      dataType="dbDate"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output].ExternalColumns[HashValue]"
+                      dataType="i8"
+                      name="HashValue" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[CityName]"
+                      name="CityName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      name="CountryName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      name="FullDate" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[HashValue]"
+                      name="HashValue" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load Transform table\OLE_SRC Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  CityName
+,       CountryName
+,       DATEFROMPARTS(Year_yyyy, Month_mm, 1) as FullDate
+,       TMaxDegC
+,       TMinDegC
+,       AFDays
+,       RainMm
+,       SunHours
+,       CONVERT(BIGINT, HASHBYTES('SHA2_512', CONCAT(TMaxDegC, TMinDegC, AFDays, RainMm, SunHours))) as HashValue
+FROM    staging.MetOffice
+ORDER BY CityName
+,       CountryName
+,       DATEFROMPARTS(Year_yyyy, Month_mm, 1)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Load Transform table\OLE_SRC Staging.Connections[OleDbConnection]"
+                  connectionManagerID="{DF9276A1-F73E-4851-89D7-54EC63186BBE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[CityName]"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CityName]"
+                      name="CityName"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      name="CountryName"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      name="FullDate"
+                      sortKeyPosition="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMaxDegC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[TMaxDegC]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMaxDegC]"
+                      name="TMaxDegC"
+                      precision="4"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMinDegC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[TMinDegC]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[TMinDegC]"
+                      name="TMinDegC"
+                      precision="4"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[AFDays]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[AFDays]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[AFDays]"
+                      name="AFDays"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[RainMm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[RainMm]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[RainMm]"
+                      name="RainMm"
+                      precision="4"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[SunHours]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[SunHours]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[SunHours]"
+                      name="SunHours"
+                      precision="4"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[HashValue]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[HashValue]"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].Columns[HashValue]"
+                      name="HashValue"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      dataType="dbDate"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[TMaxDegC]"
+                      dataType="numeric"
+                      name="TMaxDegC"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[TMinDegC]"
+                      dataType="numeric"
+                      name="TMinDegC"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[AFDays]"
+                      dataType="ui1"
+                      name="AFDays" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[RainMm]"
+                      dataType="numeric"
+                      name="RainMm"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[SunHours]"
+                      dataType="numeric"
+                      name="SunHours"
+                      precision="4"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output].ExternalColumns[HashValue]"
+                      dataType="i8"
+                      name="HashValue" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[CityName]"
+                      name="CityName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      name="CountryName" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      name="FullDate" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[TMaxDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[TMaxDegC]"
+                      name="TMaxDegC"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[TMinDegC]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[TMinDegC]"
+                      name="TMinDegC"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[AFDays]"
+                      dataType="ui1"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[AFDays]"
+                      name="AFDays" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[RainMm]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[RainMm]"
+                      name="RainMm"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[SunHours]"
+                      dataType="numeric"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[SunHours]"
+                      name="SunHours"
+                      precision="4"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[HashValue]"
+                      dataType="i8"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[HashValue]"
+                      name="HashValue" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Load Transform table.Paths[Derived Column Output]"
+              endId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT Load Transform table\DER Insert.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[Derived Column Output1]"
+              endId="Package\DFT Load Transform table\ALL With Actions.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\DFT Load Transform table\DER Update.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[Merge Join Output]"
+              endId="Package\DFT Load Transform table\CSPL Check new records.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DFT Load Transform table\MRGJ Match Existing.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[New Records]"
+              endId="Package\DFT Load Transform table\DER Insert.Inputs[Derived Column Input]"
+              name="New Records"
+              startId="Package\DFT Load Transform table\CSPL Check new records.Outputs[New Records]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[OLE DB Source Output]"
+              endId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Load Transform table\OLE_SRC Staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[OLE DB Source Output1]"
+              endId="Package\DFT Load Transform table\MRGJ Match Existing.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Load Transform table\OLE_SRC Existing Fact Data.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[Union All Output 1]"
+              endId="Package\DFT Load Transform table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DFT Load Transform table\ALL With Actions.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\DFT Load Transform table.Paths[Updated Records]"
+              endId="Package\DFT Load Transform table\DER Update.Inputs[Derived Column Input]"
+              name="Updated Records"
+              startId="Package\DFT Load Transform table\CSPL Check new records.Outputs[Updated Records]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9235DD13-9E30-4928-B542-AD80252FEBCD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE transform.FactWeather_Historical" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Load Fact"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{573F9CEB-557A-4070-8EC0-086ED903B8E1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Load Fact"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}"
+          SQLTask:SqlStatementSource="EXEC transform.prc_Load_FactWeather_Historical" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F6D6CCF-0132-40E9-88D2-550C2EEBFC53}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT Load Transform table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4391464-7AE0-4A6D-95BE-3FFDE8BD9CD2}"
+      DTS:From="Package\DFT Load Transform table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Load Fact" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\DFT Load Transform table"
+          TopLeft="458,204" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="466,112" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="547.5,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,50"
+              Start="0,0"
+              End="11.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="7.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,25"
+                    Point2="11.5,25"
+                    Point3="11.5,29" />
+                  <mssgle:LineSegment
+                    End="11.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SQL Load Fact"
+          TopLeft="484,334" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="558.25,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Load Transform table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT Load Transform table\OLE_SRC Existing Fact Data"
+          TopLeft="580,138" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT Load Transform table\OLE_SRC Staging"
+          TopLeft="239,138" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DFT Load Transform table\MRGJ Match Existing"
+          TopLeft="381,259" />
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[OLE DB Source Output]"
+          TopLeft="319.5,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.833333333333,79"
+              Start="0,0"
+              End="121.833333333333,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9753639417693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.9753639417693"
+                    Point2="0,46.9753639417693"
+                    Point3="4,46.9753639417693" />
+                  <mssgle:LineSegment
+                    End="117.833333333333,46.9753639417693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.833333333333,46.9753639417693"
+                    Point2="121.833333333333,46.9753639417693"
+                    Point3="121.833333333333,50.9753639417693" />
+                  <mssgle:LineSegment
+                    End="121.833333333333,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[OLE DB Source Output1]"
+          TopLeft="685.5,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.833333333333,79"
+              Start="0,0"
+              End="-187.833333333333,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9753639417693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.9753639417693"
+                    Point2="0,46.9753639417693"
+                    Point3="-4,46.9753639417693" />
+                  <mssgle:LineSegment
+                    End="-183.833333333333,46.9753639417693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.833333333333,46.9753639417693"
+                    Point2="-187.833333333333,46.9753639417693"
+                    Point3="-187.833333333333,50.9753639417693" />
+                  <mssgle:LineSegment
+                    End="-187.833333333333,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="195,42"
+          Id="Package\DFT Load Transform table\CSPL Check new records"
+          TopLeft="380,351" />
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[Merge Join Output]"
+          TopLeft="469.5,301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,50"
+              Start="0,0"
+              End="8,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="4,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,25"
+                    Point2="8,25"
+                    Point3="8,29" />
+                  <mssgle:LineSegment
+                    End="8,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DFT Load Transform table\DER Insert"
+          TopLeft="254,446" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\DFT Load Transform table\DER Update"
+          TopLeft="526,468" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT Load Transform table\OLE DB Destination"
+          TopLeft="435,642" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DFT Load Transform table\ALL With Actions"
+          TopLeft="427,569" />
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[New Records]"
+          TopLeft="477.5,393">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.5,53"
+              Start="0,0"
+              End="-158.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-154.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.5,26.5"
+                    Point2="-158.5,26.5"
+                    Point3="-158.5,30.5" />
+                  <mssgle:LineSegment
+                    End="-158.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.577578125,31.5,58.65515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[Updated Records]"
+          TopLeft="508.666666666667,393">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.3333333333334,75"
+              Start="0,0"
+              End="85.3333333333334,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3662258392676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3662258392676"
+                    Point2="0,30.3662258392676"
+                    Point3="4,30.3662258392676" />
+                  <mssgle:LineSegment
+                    End="81.3333333333334,30.3662258392676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.3333333333334,30.3662258392676"
+                    Point2="85.3333333333334,30.3662258392676"
+                    Point3="85.3333333333334,34.3662258392676" />
+                  <mssgle:LineSegment
+                    End="85.3333333333334,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.47014322916669,35.3662258392676,76.393046875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[Derived Column Output]"
+          TopLeft="319,488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162,81"
+              Start="0,0"
+              End="162,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.1127819548872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.1127819548872"
+                    Point2="0,48.1127819548872"
+                    Point3="4,48.1127819548872" />
+                  <mssgle:LineSegment
+                    End="158,48.1127819548872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="158,48.1127819548872"
+                    Point2="162,48.1127819548872"
+                    Point3="162,52.1127819548872" />
+                  <mssgle:LineSegment
+                    End="162,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[Derived Column Output1]"
+          TopLeft="594,510">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63,59"
+              Start="0,0"
+              End="-63,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0451127819549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.0451127819549"
+                    Point2="0,35.0451127819549"
+                    Point3="-4,35.0451127819549" />
+                  <mssgle:LineSegment
+                    End="-59,35.0451127819549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59,35.0451127819549"
+                    Point2="-63,35.0451127819549"
+                    Point3="-63,39.0451127819549" />
+                  <mssgle:LineSegment
+                    End="-63,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Load Transform table.Paths[Union All Output 1]"
+          TopLeft="506,611">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,31"
+              Start="0,0"
+              End="14.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="10.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,15.5"
+                    Point2="14.5,15.5"
+                    Point3="14.5,19.5" />
+                  <mssgle:LineSegment
+                    End="14.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load Transform table\OLE_SRC Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load Transform table\OLE_SRC Existing Fact Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load Transform table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
