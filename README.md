@@ -32,12 +32,17 @@ IMPORTANT: If you're using a local instance, do not use a dot to indicate localh
 
 ## Relevant Tables:
 
+- **olap.DimGeography**: stores cities and countries names.
+- **olap.DimDate**: stores dates since 1853 until 2030
+- **olap.DimTime**: stores time information in interval of 3h as per requirements.
 - **olap.FactWeather_Historical**: stores historical information from MetOffice
 - **olap.FactWeather_Forecast**: stores forecasted information from OpenWeather, based on https://openweathermap.org/forecast5
 - **olap.FactWeather_Current**: stores current information from OpenWeather, based on https://openweathermap.org/current
 - **olap.FactWeather_Daily**: stores daily summary from OpenWeather "current" API. This is just an aggregation of the data in the Current API because the daily forecast data (https://openweathermap.org/forecast16) is not available in the free subscription.
 
-Please note that I've considered the Current data as the most accurate and, therefore, used it to populate the Daily fact table. 
+Please note that:
+- I've considered the Current data as the most accurate and, therefore, used it to populate the Daily fact table. 
+- The housekeeping tasks to delete old data is part of the ETL packages/SQL procedures.
 
 ## Final Considerations
 
