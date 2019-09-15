@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="DWH_Load_FactWeather_Current"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{C2DB0A74-CEC8-47A4-990B-E0F465D3CF44}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{9C0E5316-5DAB-42D0-AB82-13E35D45F852}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1746,13 +1746,13 @@ GROUP BY CityName
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\SQL Load Fact"
+      DTS:refId="Package\SQL Load FactWeather_Current"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{708404B1-CA32-4A81-A553-69FBA2362C2E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="SQL Load Fact"
+      DTS:ObjectName="SQL Load FactWeather_Current"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -1760,6 +1760,23 @@ GROUP BY CityName
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}"
           SQLTask:SqlStatementSource="EXEC transform.prc_Load_FactWeather_Current" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Load FactWeather_Daily"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F2C8987A-F315-4272-8785-3F987541E8BA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Load FactWeather_Daily"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B486D7F4-E20C-4EEA-B1E5-541500FE9709}"
+          SQLTask:SqlStatementSource="EXEC olap.prc_Load_FactWeather_Daily" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1779,7 +1796,15 @@ GROUP BY CityName
       DTS:From="Package\DFT Load Transform table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\SQL Load Fact" />
+      DTS:To="Package\SQL Load FactWeather_Current" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F4080A27-AFDD-4579-A7CF-01949D6483AD}"
+      DTS:From="Package\SQL Load FactWeather_Current"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SQL Load FactWeather_Daily" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1796,18 +1821,18 @@ GROUP BY CityName
         <NodeLayout
           Size="202,42"
           Id="Package\DFT Load Transform table"
-          TopLeft="458,204" />
+          TopLeft="458.5,204" />
         <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
-          TopLeft="481,116" />
+          TopLeft="478,116" />
         <NodeLayout
-          Size="147,42"
-          Id="Package\SQL Load Fact"
-          TopLeft="488,310" />
+          Size="228,42"
+          Id="Package\SQL Load FactWeather_Current"
+          TopLeft="445.5,290" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="560.75,158">
+          TopLeft="559.5,158">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1829,18 +1854,44 @@ GROUP BY CityName
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="560.25,246">
+          TopLeft="559.5,246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,56.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="215,42"
+          Id="Package\SQL Load FactWeather_Daily"
+          TopLeft="452,378" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="559.5,332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

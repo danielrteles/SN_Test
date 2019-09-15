@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-BJEU414</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAAAkjWuxjBPdno5VjoTnhUxk2TVn7Q40364iBDW6wp98UgAAAAAOgAAAAAIAACAAAAC3SFRFoCr6F/QUQqMonbxJKKrjuksyyDuWSSGfZufvlJAAAAASKjg0EzfWngNdF/tSsHKyCW5Lwo/+zEs/iYAKzl/c0JjNjvq+P5wT5ISHdgSGA1BNyrJgk5mU5Q1aA2oCu9/O0kJvjzuR7ITmvwOliEgxpWF8ptQvI2Ieid0W/n2Ki9v39t0RQCCc9zdWLIoAIJkC53IgFuaEIZS5a5MBN+Ygb06X7qVfsqnnaFZ8d20KK/1AAAAAIrCsDLiS8rmbFgUw0Mp3+2nhxyLLqLvnJJUdzWMtbKgDbyNIk+YoI7Maw5Qda+CnFsgu+GI1dUZ+EUGEs3cK+A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAADN2BhNCMDumY1GD/+Gxeu9vqfERTAJRMQzQSO1CNO+YwAAAAAOgAAAAAIAACAAAADee8cg66ou1QYayywzYA9usZZjAs+ZdZS4v4xaW0XTQpAAAADPsW9DfmuF03tnT/LNu2+s/pZZs0BIhCLDS4lLr/V4oQ5z66PohslSTKn+JTBUEPrxFZYHJwUxf+xgw9aHOBVyx5KHhEZQwRwHHMN2JpEI/XgEvfGUJ+z3wOjGP1uci9ev80s+imdUHkAA9c7eh/vV1CBmjlHMeAL/21zfLSwk5cPIThPLJKeo/RONvrVw5/FAAAAAJR0PRtmGflM9Omc7SQuICbHgoFIDejcvsBPSRjhzQIO24+YPhZLVVojQGfxfgJZZjLx+IbEupTvvz6e+9hvduw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -628,10 +628,10 @@
                 <SSIS:Property SSIS:Name="Name">Staging_OpenWeather_Current</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">47</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{54627FF1-2A1B-4950-A209-7664012A35BD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C6E24B56-5AF1-48F9-8760-D2AEAB446205}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -645,10 +645,10 @@
                 <SSIS:Property SSIS:Name="Name">Staging_OpenWeather_Forecast</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">50</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{93F6CC0F-7AFF-4A1B-AA83-E044BE3C63EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{13C6BD45-3723-495E-8079-01BEAF061037}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -713,10 +713,10 @@
                 <SSIS:Property SSIS:Name="Name">DWH_Load_FactWeather_Current</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DEAA1700-179C-401E-B107-6176F3DC3954}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9C0E5316-5DAB-42D0-AB82-13E35D45F852}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -730,12 +730,7 @@
     </Manifest>
   </DeploymentModelSpecificContent>
   <ControlFlowParts />
-  <Miscellaneous>
-    <ProjectItem>
-      <Name>Newtonsoft.Json.dll</Name>
-      <FullPath>Newtonsoft.Json.dll</FullPath>
-    </ProjectItem>
-  </Miscellaneous>
+  <Miscellaneous />
   <Configurations>
     <Configuration>
       <Name>Development</Name>

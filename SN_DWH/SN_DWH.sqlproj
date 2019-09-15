@@ -66,6 +66,7 @@
     <Folder Include="transform\" />
     <Folder Include="transform\Tables\" />
     <Folder Include="transform\Stored Procedures\" />
+    <Folder Include="olap\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="olap\Tables\DimDate.sql" />
@@ -83,6 +84,7 @@
     <Build Include="olap\Tables\FactWeather_Current.sql" />
     <Build Include="transform\Stored Procedures\prc_Load_FactWeather_Current.sql" />
     <Build Include="olap\Tables\FactWeather_Daily.sql" />
+    <Build Include="olap\Stored Procedures\prc_Load_FactWeather_Daily.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
