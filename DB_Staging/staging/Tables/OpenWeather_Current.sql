@@ -5,7 +5,6 @@
 ,   DateTimeStamp       DATETIME
 ,   MinTemp             DECIMAL(5, 2)
 ,   MaxTemp             DECIMAL(5, 2)
-,   WeatherDescription  VARCHAR(50)
 ,   Humidity            DECIMAL(5, 2)
 )
 GO

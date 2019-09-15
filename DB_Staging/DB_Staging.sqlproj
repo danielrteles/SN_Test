@@ -67,5 +67,6 @@
     <Build Include="staging\Tables\MetOffice.sql" />
     <Build Include="Security\staging.sql" />
     <Build Include="staging\Tables\OpenWeather_Current.sql" />
+    <Build Include="staging\Tables\OpenWeather_Forecast.sql" />
   </ItemGroup>
 </Project>

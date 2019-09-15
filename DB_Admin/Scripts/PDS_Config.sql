@@ -9,6 +9,9 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]                    
 --------------------------------------------------------------------------------------
 */
+DELETE FROM config.CityFiles
+DELETE FROM config.DataProviders
+DELETE FROM config.Cities
 
 SET IDENTITY_INSERT config.Cities ON
 GO
@@ -26,7 +29,8 @@ SET IDENTITY_INSERT config.DataProviders ON
 GO
 INSERT INTO config.DataProviders (ProviderId, ProviderName)
 VALUES  (1, 'MetOffice')
-,       (2, 'OpenWeather')
+,       (2, 'OpenWeather_Current')
+,       (3, 'OpenWeather_Forecast')
 GO
 SET IDENTITY_INSERT config.DataProviders OFF
 GO
@@ -37,9 +41,15 @@ VALUES  (1, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationd
 ,       (3, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt')
 ,       (4, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/southamptondata.txt')
 ,       (5, 1, 'http://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/chivenordata.txt')
-,       (1, 2, 'https://openweathermap.org/city/2640729')
-,       (2, 2, 'https://openweathermap.org/city/2653941')
-,       (3, 2, 'https://openweathermap.org/city/2654993')
-,       (4, 2, 'https://openweathermap.org/city/2637487')
-,       (5, 2, 'https://openweathermap.org/city/2656281')
+,       (1, 2, 'https://api.openweathermap.org/data/2.5/weather?id=2640729')
+,       (2, 2, 'https://api.openweathermap.org/data/2.5/weather?id=2653941')
+,       (3, 2, 'https://api.openweathermap.org/data/2.5/weather?id=2654993')
+,       (4, 2, 'https://api.openweathermap.org/data/2.5/weather?id=2637487')
+,       (5, 2, 'https://api.openweathermap.org/data/2.5/weather?id=2656281')
+,       (1, 3, 'https://api.openweathermap.org/data/2.5/forecast?id=2640729')
+,       (2, 3, 'https://api.openweathermap.org/data/2.5/forecast?id=2653941')
+,       (3, 3, 'https://api.openweathermap.org/data/2.5/forecast?id=2654993')
+,       (4, 3, 'https://api.openweathermap.org/data/2.5/forecast?id=2637487')
+,       (5, 3, 'https://api.openweathermap.org/data/2.5/forecast?id=2656281')
 GO
+

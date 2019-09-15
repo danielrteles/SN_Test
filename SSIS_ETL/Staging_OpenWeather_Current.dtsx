@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Staging_OpenWeather_Current"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{DF2A2909-AFD6-4715-A9AB-EB7AFBE72653}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{1E1D93A1-47F7-4ED9-9E97-D08F0FFE84AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -141,14 +141,6 @@
                       refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input].Columns[Weather]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="Weather"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]" />
-                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -228,30 +220,6 @@
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">GETDATE()</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
-                          name="DER_Weather"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_STR,50,1252)#{Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]}</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,50,1252)Weather</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -400,14 +368,6 @@
                           cachedName="DER_TimeStamp"
                           externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStamp]"
                           lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_TimeStamp]" />
-                        <inputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_Weather]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="DER_Weather"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
-                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -439,12 +399,6 @@
                           name="MaxTemp"
                           precision="5"
                           scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="WeatherDescription" />
                         <externalMetadataColumn
                           refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
                           dataType="numeric"
@@ -508,8 +462,7 @@
 
 SELECT *  
 FROM OPENJSON(@Json)
-WITH (Weather NVARCHAR(50) '$.weather[0].main'
-    , TempMin DECIMAL(5, 2) '$.main.temp_min'
+WITH (TempMin DECIMAL(5, 2) '$.main.temp_min'
     , TempMax DECIMAL(5, 2) '$.main.temp_max'
     , Humidity DECIMAL(5, 2) '$.main.humidity'
     )</property>
@@ -549,16 +502,6 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
-                          name="Weather"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMin]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
@@ -595,11 +538,6 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
-                          dataType="wstr"
-                          length="50"
-                          name="Weather" />
-                        <externalMetadataColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMin]"
                           dataType="numeric"
                           name="TempMin"
@@ -624,12 +562,6 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
-                          dataType="wstr"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
-                          name="Weather" />
                         <outputColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMin]"
                           dataType="numeric"
@@ -916,14 +848,34 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_f84653afcd474c0e95417877c3f4a9f0.Properties.Settings.get_Default():ST_f84653afcd474c0e95417877c3f4a9f0.Properties.Sett" +
+    "ings")]
+
+namespace ST_f84653afcd474c0e95417877c3f4a9f0.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1096,35 +1048,6 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
   <package id="System.Net.Http" version="4.3.4" targetFramework="net45" />
 </packages>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_f84653afcd474c0e95417877c3f4a9f0.Properties.Settings.get_Default():ST_f84653afcd474c0e95417877c3f4a9f0.Properties.Sett" +
-    "ings")]
-
-namespace ST_f84653afcd474c0e95417877c3f4a9f0.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1154,6 +1077,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1398,7 +1330,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8F8EA7F-E5B1-4D0F-8094-99C5F6EA3D07}"
-          SQLTask:SqlStatementSource="SELECT  c.CityName, c.CountryName, cf.FileUrl&#xA;FROM    config.CityFiles cf&#xA;JOIN    config.Cities c         ON c.CityId = cf.CityId&#xA;JOIN    config.DataProviders dp ON dp.ProviderId = cf.ProviderId&#xA;WHERE   ProviderName = 'OpenWeather'"
+          SQLTask:SqlStatementSource="SELECT  c.CityName, c.CountryName, cf.FileUrl&#xA;FROM    config.CityFiles cf&#xA;JOIN    config.Cities c         ON c.CityId = cf.CityId&#xA;JOIN    config.DataProviders dp ON dp.ProviderId = cf.ProviderId&#xA;WHERE   ProviderName = 'OpenWeather_Current'"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1559,6 +1491,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="246,42"
           Id="Package\FELC\DFT Stage File\DER New Columns and conversions"
           TopLeft="576,188" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\FELC\DFT Stage File\OLE_DST Staging Table"
+          TopLeft="611,302" />
         <EdgeLayout
           Id="Package\FELC\DFT Stage File.Paths[OLE DB Source Output]"
           TopLeft="700,127">
@@ -1581,10 +1517,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\FELC\DFT Stage File\OLE_DST Staging Table"
-          TopLeft="611,302" />
         <EdgeLayout
           Id="Package\FELC\DFT Stage File.Paths[Derived Column Output]"
           TopLeft="702.75,230">

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Staging_OpenWeather_Forecast"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{AAC6BFF0-C300-4FD2-B20C-3552C6A924E7}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{93F6CC0F-7AFF-4A1B-AA83-E044BE3C63EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -141,14 +141,6 @@
                       refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input].Columns[Weather]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="Weather"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]" />
-                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -230,30 +222,6 @@
                               name="FriendlyExpression">GETDATE()</property>
                           </properties>
                         </outputColumn>
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
-                          name="DER_Weather"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_STR,50,1252)#{Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]}</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,50,1252)Weather</property>
-                          </properties>
-                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -298,7 +266,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[staging].[OpenWeather_Current]</property>
+                      name="OpenRowset">[staging].[OpenWeather_Forecast]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -395,19 +363,11 @@
                           externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MaxTemp]"
                           lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMax]" />
                         <inputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_TimeStamp]"
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[ForecastDateTime]"
                           cachedDataType="dbTimeStamp"
-                          cachedName="DER_TimeStamp"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStamp]"
-                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_TimeStamp]" />
-                        <inputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_Weather]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="DER_Weather"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
-                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]" />
+                          cachedName="ForecastDateTime"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ForecastDateTime]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[ForecastDateTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -424,10 +384,6 @@
                           length="50"
                           name="CountryName" />
                         <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStamp]"
-                          dataType="dbTimeStamp"
-                          name="DateTimeStamp" />
-                        <externalMetadataColumn
                           refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MinTemp]"
                           dataType="numeric"
                           name="MinTemp"
@@ -440,17 +396,15 @@
                           precision="5"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="WeatherDescription" />
-                        <externalMetadataColumn
                           refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
                           dataType="numeric"
                           name="Humidity"
                           precision="5"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ForecastDateTime]"
+                          dataType="dbTimeStamp"
+                          name="ForecastDateTime" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -507,8 +461,8 @@
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Json NVARCHAR(MAX) = ?
 
 SELECT *  
-FROM OPENJSON(@Json)
-WITH (Weather NVARCHAR(50) '$.weather[0].main'
+FROM OPENJSON(@Json, N'$.list')
+WITH (ForecastDateTime DATETIME '$.dt_txt'
     , TempMin DECIMAL(5, 2) '$.main.temp_min'
     , TempMax DECIMAL(5, 2) '$.main.temp_max'
     , Humidity DECIMAL(5, 2) '$.main.humidity'
@@ -549,14 +503,24 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
-                          dataType="wstr"
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
+                          dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
-                          name="Weather"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
+                          name="Humidity"
+                          precision="5"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[ForecastDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[ForecastDateTime]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[ForecastDateTime]"
+                          name="ForecastDateTime"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMin]"
@@ -580,25 +544,19 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                           precision="5"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
-                          name="Humidity"
-                          precision="5"
-                          scale="2"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
-                          dataType="wstr"
-                          length="50"
-                          name="Weather" />
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
+                          dataType="numeric"
+                          name="Humidity"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[ForecastDateTime]"
+                          dataType="dbTimeStamp"
+                          name="ForecastDateTime" />
                         <externalMetadataColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMin]"
                           dataType="numeric"
@@ -611,12 +569,6 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                           name="TempMax"
                           precision="5"
                           scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
-                          dataType="numeric"
-                          name="Humidity"
-                          precision="5"
-                          scale="2" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -625,11 +577,10 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
-                          dataType="wstr"
-                          length="50"
-                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
-                          name="Weather" />
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ForecastDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ForecastDateTime]"
+                          name="ForecastDateTime" />
                         <outputColumn
                           refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMin]"
                           dataType="numeric"
@@ -916,6 +867,12 @@ WITH (Weather NVARCHAR(50) '$.weather[0].main'
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Net.Http" version="4.3.4" targetFramework="net45" />
+</packages>]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1095,7 +1052,7 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
     <msb:CodeName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:DisplayName>
-    <msb:ProjectId>{761868F8-1C9E-4D44-BDE3-20061654781F}</msb:ProjectId>
+    <msb:ProjectId>{60987B3B-8C74-4945-9835-ED166FB665DB}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_abacfdc674a64bdd8d748277951d3a3c.csproj" />
@@ -1109,12 +1066,6 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Net.Http" version="4.3.4" targetFramework="net45" />
-</packages>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -1225,7 +1176,7 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0.Properties {
               <BinaryItem
                 Name="ST_abacfdc674a64bdd8d748277951d3a3c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDALDwfV0AAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAUjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMP5fV0AAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAUjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAAxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1261,7 +1212,7 @@ BgApAHsA/gAuAAsA1gAuABMA3wAuABsA/gAuACMABwEuACsAMAEuADMAMAEuADsAMAEuAEMABwEu
 AEsANgEuAFMAMAEuAFsATQFDAGMAlwFJAHsA/gBhAGsAlwFjAHMAlwGBAGsAlwGhAGsAlwFAAWsA
 lwFgAWsAlwGAAWsAlwGgAWsAlwEbAAMAAQAEAAMABQAEAAAAlAS+AAAASQHDAAAA8wXIAAAA/wDN
 AAAAwwXRAAIABAADAAIABQAFAAEABgAFAAIABwAHAAIACgAJAAEACwAJAAIADAALAAEADQALAASA
-AAABAAAAHRzgPwAAAAAAAFYAAAAEAAAAAAAAAAAAAAB4AE0AAAAAAA4AAAAAAAAAAAAAAIEAfwMA
+AAABAAAAHRxpRAAAAAAAAFYAAAAEAAAAAAAAAAAAAAB4AE0AAAAAAA4AAAAAAAAAAAAAAIEAfwMA
 AAAABAAAAAAAAAAAAAAAeAAgBAAAAAAOAAAAAAAAAAAAAACBAC4AAAAAAAAAAAABAAAAEwUAAAUA
 AgAAAABTVF9mODQ2NTNhZmNkNDc0YzBlOTU0MTc4NzdjM2Y0YTlmMAA8TW9kdWxlPgBNaWNyb3Nv
 ZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAbXNjb3JsaWIAU1RfYWJhY2ZkYzY3NGE2NGJkZDhkNzQ4
@@ -1297,7 +1248,7 @@ ZQBjAHQAOgA6AEEAcABpAEkAZAAADyYAYQBwAHAAaQBkAD0AACNVAHMAZQByADoAOgBKAHMAbwBu
 AEMAbwBuAHQAZQBuAHQAABlTAEMAUgAgAEcAZQB0ACAASgBzAG8AbgAAL0UAcgByAG8AcgAgAGQA
 dQByAGkAbgBnACAAQQBQAEkAIABjAGEAbABsADoAIAAAcVMAVABfAGYAOAA0ADYANQAzAGEAZgBj
 AGQANAA3ADQAYwAwAGUAOQA1ADQAMQA3ADgANwA3AGMAMwBmADQAYQA5AGYAMAAuAFAAcgBvAHAA
-ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAABHwVP00a0tLk/eeEj3AffgABCABAQgD
+ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAF7kjqIR0nBCpoLoRDJMhOUABCABAQgD
 IAABBSABARERBCABAQ4FIAEBEVUHBwQODg4SPQQgABJhBCAAEmUFIAESaRwDIAAcAyAADgYAAw4O
 Dg4EIAEODgQgAQEcBCAAEnUFAAIODg4CBg4IIAUCCA4ODggGAAESeRF9BSAAEoCBByACAQ4SgIEI
 t3pcVhk04IkIiYRdzYCAzJEDBhJNAwYSUQMGEhADBh0OBAAAEk0EAAASUQUAAQESUQQAABIQAwAA
@@ -1315,14 +1266,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAOA/HRwAAAEA4D8dHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAGlEHRwAAAEAaUQdHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3ADcA
 YwAzAGYANABhADkAZgAwAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADcAMQA5ADcALgAxADYAMwA1ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+ADcAMQA5ADcALgAxADcANQAxADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
 UwBUAF8AYQBiAGEAYwBmAGQAYwA2ADcANABhADYANABiAGQAZAA4AGQANwA0ADgAMgA3ADcAOQA1
 ADEAZAAzAGEAMwBjAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
 AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADkAAAAqAAEAAQBMAGUAZwBhAGwAVABy
@@ -1331,8 +1282,8 @@ YQBtAGUAAABTAFQAXwBhAGIAYQBjAGYAZABjADYANwA0AGEANgA0AGIAZABkADgAZAA3ADQAOAAy
 ADcANwA5ADUAMQBkADMAYQAzAGMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
 ZQAAAAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3
 ADcAYwAzAGYANABhADkAZgAwAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA3ADEAOQA3AC4AMQA2ADMANQAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
-AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADEAOQA3AC4AMQA2ADMANQAyAAAAAAAAAAAAAAAAAAAA
+MQAuADAALgA3ADEAOQA3AC4AMQA3ADUAMQAzAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADEAOQA3AC4AMQA3ADUAMQAzAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1398,7 +1349,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8F8EA7F-E5B1-4D0F-8094-99C5F6EA3D07}"
-          SQLTask:SqlStatementSource="SELECT  c.CityName, c.CountryName, cf.FileUrl&#xA;FROM    config.CityFiles cf&#xA;JOIN    config.Cities c         ON c.CityId = cf.CityId&#xA;JOIN    config.DataProviders dp ON dp.ProviderId = cf.ProviderId&#xA;WHERE   ProviderName = 'OpenWeather'"
+          SQLTask:SqlStatementSource="SELECT  c.CityName, c.CountryName, cf.FileUrl&#xA;FROM    config.CityFiles cf&#xA;JOIN    config.Cities c         ON c.CityId = cf.CityId&#xA;JOIN    config.DataProviders dp ON dp.ProviderId = cf.ProviderId&#xA;WHERE   ProviderName = 'OpenWeather_Forecast'"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1420,7 +1371,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DF9276A1-F73E-4851-89D7-54EC63186BBE}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.OpenWeather_Current" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.OpenWeather_Forecast" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1559,6 +1510,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="246,42"
           Id="Package\FELC\DFT Stage File\DER New Columns and conversions"
           TopLeft="576,188" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\FELC\DFT Stage File\OLE_DST Staging Table"
+          TopLeft="611,302" />
         <EdgeLayout
           Id="Package\FELC\DFT Stage File.Paths[OLE DB Source Output]"
           TopLeft="700,127">
@@ -1581,10 +1536,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\FELC\DFT Stage File\OLE_DST Staging Table"
-          TopLeft="611,302" />
         <EdgeLayout
           Id="Package\FELC\DFT Stage File.Paths[Derived Column Output]"
           TopLeft="702.75,230">
