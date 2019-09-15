@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{0a2f1fe6-6ac2-46ff-9d20-51f441940b2b}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">SSIS_ETL</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">SN_ETL</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-BJEU414</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAADN2BhNCMDumY1GD/+Gxeu9vqfERTAJRMQzQSO1CNO+YwAAAAAOgAAAAAIAACAAAADee8cg66ou1QYayywzYA9usZZjAs+ZdZS4v4xaW0XTQpAAAADPsW9DfmuF03tnT/LNu2+s/pZZs0BIhCLDS4lLr/V4oQ5z66PohslSTKn+JTBUEPrxFZYHJwUxf+xgw9aHOBVyx5KHhEZQwRwHHMN2JpEI/XgEvfGUJ+z3wOjGP1uci9ev80s+imdUHkAA9c7eh/vV1CBmjlHMeAL/21zfLSwk5cPIThPLJKeo/RONvrVw5/FAAAAAJR0PRtmGflM9Omc7SQuICbHgoFIDejcvsBPSRjhzQIO24+YPhZLVVojQGfxfgJZZjLx+IbEupTvvz6e+9hvduw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAADdBSfqKXWyT+HBTDi4n+8IWh71z6UFIPwl0rSXz2qtLgAAAAAOgAAAAAIAACAAAAD4HIlekICBYBpfY2Wz9u3kCS+0wORVR8Zuf9Jx2CmtZpAAAAATy8UaBJMZm2BIIeniOlm+azoCsLyTJ6TIqE8XiblSaKjUdI32rd8STN2cDc1fFKBw3dXobD7n1+iE0gysmhDqpDt1UlbJYsgfb5rNGmNnAsFrnPLylO4mSxZMJ5dynfdu97NVAa70IXxW8ihe81LZ6+EmFvCJv2dHFv4vy3xpYD9wM984kRZJsM/Vp/q/psNAAAAA6AxBnLskLB+BflhGSi4TRwjwmXmF26PN0OY2g15VD8zR9NUgHUp5eoQIHinw0RdhqcmQ+C6mgNdRYeT3U0y8Cw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -696,10 +696,10 @@
                 <SSIS:Property SSIS:Name="Name">DWH_Load_FactWeather_Forecast</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{205BA2C1-194D-4ED4-BD7D-1215BD4A2F9B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2F492C51-596D-4E3B-8861-8A2978E41580}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -713,10 +713,10 @@
                 <SSIS:Property SSIS:Name="Name">DWH_Load_FactWeather_Current</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9C0E5316-5DAB-42D0-AB82-13E35D45F852}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{66B779A3-77D2-486A-84CC-81A39D99BF17}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
