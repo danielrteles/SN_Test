@@ -1,7 +1,7 @@
 ﻿
 DECLARE @Date   DATE = '18530101'
 
-TRUNCATE TABLE olap.DimDate
+DELETE FROM olap.DimDate
 
 WHILE @Date <= '20301231'
 BEGIN

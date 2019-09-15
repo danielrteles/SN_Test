@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SN_DWH</Name>
+    <Name>DB_DWH</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{8f118d7d-2757-4250-ad61-9352c30d4ebb}</ProjectGuid>
@@ -25,6 +25,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <TargetDatabase>SN_DWH</TargetDatabase>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -87,6 +88,17 @@
     <Build Include="olap\Stored Procedures\prc_Load_FactWeather_Daily.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
+    <None Include="Scripts\PDS_PopulateStaticDimensions.sql" />
+    <PostDeploy Include="Scripts\PDS_Organiser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PDS_HistoricalJob.sql" />
+    <None Include="Scripts\PDS_IncrementalJob.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="SQLServerName">
+      <DefaultValue>localhost</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>

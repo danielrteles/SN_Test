@@ -61,8 +61,6 @@
     <Folder Include="Properties" />
     <Folder Include="config\" />
     <Folder Include="config\Tables\" />
-    <Folder Include="logs" />
-    <Folder Include="logs\Tables" />
     <Folder Include="Security\" />
     <Folder Include="Scripts" />
   </ItemGroup>
@@ -70,8 +68,6 @@
     <Build Include="config\Tables\DataProviders.sql" />
     <Build Include="config\Tables\Cities.sql" />
     <Build Include="config\Tables\CityFiles.sql" />
-    <Build Include="logs\Tables\ImportLog.sql" />
-    <Build Include="Security\logs.sql" />
     <Build Include="Security\config.sql" />
   </ItemGroup>
   <ItemGroup>
