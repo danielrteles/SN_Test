@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Staging_OpenWeather"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{1310F5A4-5CDA-47FE-B4CF-A77661C9E349}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{E5848AEF-043F-4EFE-84F6-00361B76F91A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,11 +30,11 @@
             <DTS:Property
               DTS:Name="ServerPassword"
               Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACXFJci2GNP8ttNRcz5mAdLSK5ZFEhZu4/sr9H/cBvKBwAAAAAOgAAAAAIAACAAAAA3Baoyc7aV/XhHNN/8HtJluWpENmmNojQez6Q1vdaeyBAAAABp9u04HmLBQgFGzCYrMCqsQAAAAJK2x9w9O2nR5BHQDgAXTifo17xn9YcZlqaBJfNBHpUboCVyj+9chNDXQhKZFjdFgo4I5XC9RX9BLUlOU0MCWiE</DTS:Property>
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADW9nHPgdcBBpOmwN8vKceNccMQrVMpWoSh4YCU9F3QXgAAAAAOgAAAAAIAACAAAADbDCBpE+5kMD+FVl1Looz246nm6KsppREEIbfmbtxsSxAAAACGztnURUbMFCVS9hp4jteBQAAAAJsAOvgGuxWxkKTX8Zyp+gLxURivmHLXH/90D8bkwELtqsGCtVkWf3mCvSNereFM6bW0f6Csa1H0ZkBprkloYZY</DTS:Property>
             <DTS:Property
               DTS:Name="ProxyPassword"
               Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSXSdkQGFIYL6tQKkwRA5fCXJk3KwWhzpI2BW8Kc+YAwAAAAAOgAAAAAIAACAAAACMKQuE2p3PkwlUb6g+Fxs5DJ1pQMVQUn6XzgUA2oYTCxAAAAA0wCZYVIrZdKe4FHFSvrnJQAAAADjj4WTr+ai62VisJukgyz14/FfI+HtFvvRlfzukG1NJFpv25F2ZqQG/zAKiV0cYZR9/YQ7NdciNtRvXCvtLGds</DTS:Property>
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/r1gJSn/sk+qIQrpoLvQkK3I6tt4lrYcnb52Q2FoB8gAAAAAOgAAAAAIAACAAAADdM0BVt2n1FeYOWrbQoAS8k31ek+rEfPSzJqE+G0+fihAAAAA1FzVCAtYlUxfKLnsOLKebQAAAACwfvmYrnK+6PhSOfzHUlq9QLhozU/KbxJhOc3/wdd73WzIjFLfp2lNU3klpBKid4ycnggGTNMdKSsZziIlepEk</DTS:Property>
           </DTS:HttpConnection>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
@@ -242,884 +242,557 @@
               version="1">
               <components>
                 <component
-                  refId="Package\FELC\DFT Stage File\SCC Json to Table"
-                  componentClassID="Microsoft.ManagedComponentHost"
-                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
-                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
-                  name="SCC Json to Table"
-                  version="11">
+                  refId="Package\FELC\DFT Stage File\DER New Columns and conversions"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DER New Columns and conversions"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input].Columns[Weather]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Weather"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CityName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CityName]"
+                          name="DER_CityName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)@[User::CityName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)@[User::CityName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CountryName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CountryName]"
+                          name="DER_CountryName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)@[User::CountryName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)@[User::CountryName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_TimeStamp]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_TimeStamp]"
+                          name="DER_TimeStamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]"
+                          name="DER_Weather"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)#{Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)Weather</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC\DFT Stage File\OLE_DST Staging Table"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST Staging Table"
+                  usesDispositions="true"
+                  version="4">
                   <properties>
                     <property
-                      dataType="System.String"
-                      description="Stores the source code of the component"
-                      isArray="true"
-                      name="SourceCode"
-                      state="cdata">
-                      <arrayElements
-                        arrayElementCount="30">
-                        <arrayElement
-                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-
-public class UserComponent: ScriptComponent
-{
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
-    {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
-    }
-
-    public Output0Buffer Output0Buffer;
-
-    public virtual void FinishOutputs()
-    {
-    }
-
-    private void MarkOutputsFinished()
-    {
-
-        if (null != Output0Buffer)
-        {
-            Output0Buffer.SetEndOfRowset();
-            Output0Buffer = null;
-        }
-
-    }
-
-    public override void PrimeOutput(int Outputs, int[] OutputIDs, PipelineBuffer[] Buffers, OutputNameMap OutputMap)
-    {
-       for(int Idx = 0; Idx < Outputs; Idx++)
-       {
-            if(OutputIDs[Idx] == GetOutputID(OutputMap, @"Output 0"))
-            {
-                Output0Buffer = new Output0Buffer(Buffers[Idx], GetColumnIndexes(OutputIDs[Idx]), OutputMap);
-            }
-        }
-
-        CreateNewOutputRows();
-
-        FinishOutputs();
-        MarkOutputsFinished();
-
-    }
-
-    public virtual void CreateNewOutputRows()
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-    public IDTSConnectionManager100 StagingDB
-    {
-        get
-        {
-            return ParentComponent.ComponentMetaData.RuntimeConnectionCollection.GetRuntimeConnectionByName(@"StagingDB").ConnectionManager;
-        }
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-    public Object JsonContent
-    {
-        get
-        {
-            return (Object)(ParentComponent.ReadOnlyVariables["JsonContent"].GetValueWithContext(ScriptComponent.EvaluatorContext));
-        }
-    }
-
-}
-]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-</root>]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
-/* The Script Component allows you to perform virtually any operation that can be accomplished in
- * a .Net application within the context of an Integration Services data flow.
- *
- * Expand the other regions which have "Help" prefixes for examples of specific ways to use
- * Integration Services features within this script component. */
-#endregion
-
-#region Namespaces
-using System;
-using System.Collections.Generic;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-using Newtonsoft.Json;
-#endregion
-
-/// <summary>
-/// This is the class to which to add your code.  Do not change the name, attributes, or parent
-/// of this class.
-/// </summary>
-[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
-public class ScriptMain : UserComponent
-{
-    #region Help:  Using Integration Services variables and parameters
-    /* To use a variable in this script, first ensure that the variable has been added to
-     * either the list contained in the ReadOnlyVariables property or the list contained in
-     * the ReadWriteVariables property of this script component, according to whether or not your
-     * code needs to write into the variable.  To do so, save this script, close this instance of
-     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
-     * Script Transformation Editor window.
-     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
-     *
-     * Example of reading from a variable or parameter:
-     *  DateTime startTime = Variables.MyStartTime;
-     *
-     * Example of writing to a variable:
-     *  Variables.myStringVariable = "new value";
-     */
-    #endregion
-
-    #region Help:  Using Integration Services Connnection Managers
-    /* Some types of connection managers can be used in this script component.  See the help topic
-     * "Working with Connection Managers Programatically" for details.
-     *
-     * To use a connection manager in this script, first ensure that the connection manager has
-     * been added to either the list of connection managers on the Connection Managers page of the
-     * script component editor.  To add the connection manager, save this script, close this instance of
-     * Visual Studio, and add the Connection Manager to the list.
-     *
-     * If the component needs to hold a connection open while processing rows, override the
-     * AcquireConnections and ReleaseConnections methods.
-     * 
-     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
-     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
-     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
-     *
-     * Example of using a File connection manager to acquire a file path:
-     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
-     *  string filePath = (string)rawConnection;
-     *
-     * Example of releasing a connection manager:
-     *  Connections.SalesDB.ReleaseConnection(rawConnection);
-     */
-    #endregion
-
-    #region Help:  Firing Integration Services Events
-    /* This script component can fire events.
-     *
-     * Example of firing an error event:
-     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
-     *
-     * Example of firing an information event:
-     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
-     *
-     * Example of firing a warning event:
-     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
-     */
-    #endregion
-
-    string weatherJson;
-
-    /// <summary>
-    /// This method is called once, before rows begin to be processed in the data flow.
-    ///
-    /// You can remove this method if you don't need to do anything here.
-    /// </summary>
-    public override void PreExecute()
-    {
-        base.PreExecute();
-        weatherJson = Variables.JsonContent.ToString();
-    }
-
-    /// <summary>
-    /// This method is called after all the rows have passed through this component.
-    ///
-    /// You can delete this method if you don't need to do anything here.
-    /// </summary>
-    public override void PostExecute()
-    {
-        base.PostExecute();
-        /*
-         * Add your code here
-         */
-    }
-
-    public override void CreateNewOutputRows()
-    {
-        var o = JsonConvert.DeserializeObject<List<Output>>(weatherJson);
-        
-    }
-
-
-    public class Output
-    {
-        public string name { get; set; }
-        public string[] results { get; set; }
-    }
-
-    public static DataTable ToDataTable(this List<Output> list)
-    {
-        var dt = new DataTable();
-
-        // process the data
-        foreach (var field in list)
-        {
-            dt.Columns.Add(field.name);
-            for (int i = 0; i < numRows; i++)
-                // replacing missing values with empty strings
-                dt.Rows[i][field.name] = i < field.results.Length ? field.results[i] : string.Empty;
-        }
-
-        return dt;
-    }
-
-}
-]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services buffer wrappers
-*  This module defines classes for accessing data flow buffers
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-
-public class Output0Buffer: ScriptBuffer
-
-{
-    public Output0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
-        : base(Buffer, BufferColumnIndexes, OutputMap)
-    {
-    }
-
-    public Decimal MaxTemp
-    {
-        set
-        {
-            this[0] = value;
-        }
-    }
-    public bool MaxTemp_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(0);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    public Decimal MinTemp
-    {
-        set
-        {
-            this[1] = value;
-        }
-    }
-    public bool MinTemp_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(1);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    public String Description
-    {
-        set
-        {
-            this[2] = value;
-        }
-    }
-    public bool Description_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(2);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    public Decimal Humidity
-    {
-        set
-        {
-            this[3] = value;
-        }
-    }
-    public bool Humidity_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(3);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    new public void AddRow()
-    {
-        base.AddRow();
-    }
-
-    new public void SetEndOfRowset()
-    {
-        base.SetEndOfRowset();
-    }
-
-    new public bool EndOfRowset()
-    {
-        return base.EndOfRowset();
-    }
-
-}
-]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Settings.get_Default():SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Sett" +
-    "ings")]
-
-namespace SC_5d116573a5ab478abce0a1b49ad88e64.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}
-]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[SC_5d116573a5ab478abce0a1b49ad88e64.csproj]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD641D27-8CF7-454A-9038-36DF72A28962}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_5d116573a5ab478abce0a1b49ad88e64</RootNamespace>
-    <AssemblyName>SC_5d116573a5ab478abce0a1b49ad88e64</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\danie\source\repos\SN_Test_SQL\NuGetPackages\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Compile Include="main.cs" />
-    <Compile Include="BufferWrapper.cs" />
-    <Compile Include="ComponentWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
-        <Host Name="ScriptComponent" IconIndex="0" />
-        <ProjectClient>
-          <HostIdentifier>SSIS_SC140</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Project]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_5d116573a5ab478abce0a1b49ad88e64</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_5d116573a5ab478abce0a1b49ad88e64</msb:DisplayName>
-    <msb:ProjectId>{316D33B2-F5F4-457D-9BAE-72D17AB90518}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_5d116573a5ab478abce0a1b49ad88e64.csproj" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_5d116573a5ab478abce0a1b49ad88e64")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_5d116573a5ab478abce0a1b49ad88e64")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.0.0")]
-]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                        <arrayElement
-                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
-    "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
-    "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
-    "):Void")]
-
-namespace SC_5d116573a5ab478abce0a1b49ad88e64.Properties {
-    
-    
-    /// <summary>
-    ///   A strongly-typed resource class, for looking up localized strings, etc.
-    /// </summary>
-    // This class was auto-generated by the StronglyTypedResourceBuilder
-    // class via a tool like ResGen or Visual Studio.
-    // To add or remove a member, edit your .ResX file then rerun ResGen
-    // with the /str option, or rebuild your VS project.
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class Resources {
-        
-        private static global::System.Resources.ResourceManager resourceMan;
-        
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
-        }
-        
-        /// <summary>
-        ///   Returns the cached ResourceManager instance used by this class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_5d116573a5ab478abce0a1b49ad88e64.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
-            }
-        }
-        
-        /// <summary>
-        ///   Overrides the current thread's CurrentUICulture property for all
-        ///   resource lookups using this strongly typed resource class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
-                return resourceCulture;
-            }
-            set {
-                resourceCulture = value;
-            }
-        }
-    }
-}
-]]></arrayElement>
-                      </arrayElements>
-                    </property>
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
                     <property
                       dataType="System.String"
-                      description="Stores the binary representation of the component"
-                      isArray="true"
-                      name="BinaryCode"
-                      state="cdata">
-                      <arrayElements
-                        arrayElementCount="0" />
-                    </property>
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[OpenWeather_Current]</property>
                     <property
                       dataType="System.String"
-                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
-                      name="VSTAProjectName"
-                      typeConverter="NOTBROWSABLE">SC_5d116573a5ab478abce0a1b49ad88e64</property>
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
                     <property
                       dataType="System.String"
-                      description="Specifies the programming language used by the script."
-                      name="ScriptLanguage"
-                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
                     <property
                       dataType="System.String"
-                      description="Specifies a comma-separated list of read-only variables."
-                      name="ReadOnlyVariables"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">User::JsonContent</property>
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
-                      dataType="System.String"
-                      description="Specifies a comma-separated list of read/write variables."
-                      name="ReadWriteVariables"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
-                    <property
-                      dataType="System.String"
-                      description="List of breakpoints present on the script."
-                      isArray="true"
-                      name="BreakpointCollection"
-                      typeConverter="NOTBROWSABLE">
-                      <arrayElements
-                        arrayElementCount="0" />
-                    </property>
-                    <property
-                      dataType="System.String"
-                      description="Checksum to match component metedata against compiled codes."
-                      name="MetadataChecksum140"
-                      typeConverter="NOTBROWSABLE">EC</property>
-                    <property
-                      dataType="System.String"
-                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FELC\DFT Stage File\SCC Json to Table.Connections[StagingDB]"
+                      refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Connections[OleDbConnection]"
                       connectionManagerID="{DF9276A1-F73E-4851-89D7-54EC63186BBE}:external"
                       connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
-                      name="StagingDB" />
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
                   </connections>
-                  <outputs>
-                    <output
-                      refId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0]"
+                  <inputs>
+                    <input
+                      refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
                       hasSideEffects="true"
-                      name="Output 0">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[MaxTemp]"
-                          dataType="decimal"
-                          lineageId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[MaxTemp]"
-                          name="MaxTemp"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[MinTemp]"
-                          dataType="decimal"
-                          lineageId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[MinTemp]"
-                          name="MinTemp"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[Description]"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[Humidity]"
+                          cachedDataType="numeric"
+                          cachedName="Humidity"
+                          cachedPrecision="5"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_CityName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DER_CityName"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CityName]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_CountryName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DER_CountryName"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_CountryName]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[TempMin]"
+                          cachedDataType="numeric"
+                          cachedName="TempMin"
+                          cachedPrecision="5"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MinTemp]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMin]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[TempMax]"
+                          cachedDataType="numeric"
+                          cachedName="TempMax"
+                          cachedPrecision="5"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MaxTemp]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMax]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_TimeStamp]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DER_TimeStamp"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStamp]"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_TimeStamp]" />
+                        <inputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].Columns[DER_Weather]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DER_Weather"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
+                          lineageId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output].Columns[DER_Weather]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[Description]"
-                          name="Description" />
-                        <outputColumn
-                          refId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[Humidity]"
-                          dataType="decimal"
-                          lineageId="Package\FELC\DFT Stage File\SCC Json to Table.Outputs[Output 0].Columns[Humidity]"
-                          name="Humidity"
+                          name="CityName" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStamp]"
+                          dataType="dbTimeStamp"
+                          name="DateTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MinTemp]"
+                          dataType="numeric"
+                          name="MinTemp"
+                          precision="5"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MaxTemp]"
+                          dataType="numeric"
+                          name="MaxTemp"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WeatherDescription" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                          dataType="numeric"
+                          name="Humidity"
+                          precision="5"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC Get From JSON"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Json NVARCHAR(MAX) = ?
+
+SELECT *  
+FROM OPENJSON(@Json)
+WITH (Weather NVARCHAR(50) '$.weather[0].main'
+    , TempMin DECIMAL(5, 2) '$.main.temp_min'
+    , TempMax DECIMAL(5, 2) '$.main.temp_max'
+    , Humidity DECIMAL(5, 2) '$.main.humidity'
+    )</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{EE1F2921-F5E2-4ABF-AD2B-05B3D738DC00};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Connections[OleDbConnection]"
+                      connectionManagerID="{DF9276A1-F73E-4851-89D7-54EC63186BBE}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
+                          length="50"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Weather]"
+                          name="Weather"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMin]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMin]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMin]"
+                          name="TempMin"
+                          precision="5"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMax]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMax]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[TempMax]"
+                          name="TempMax"
+                          precision="5"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].Columns[Humidity]"
+                          name="Humidity"
+                          precision="5"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Weather]"
+                          dataType="wstr"
+                          length="50"
+                          name="Weather" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMin]"
+                          dataType="numeric"
+                          name="TempMin"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[TempMax]"
+                          dataType="numeric"
+                          name="TempMax"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output].ExternalColumns[Humidity]"
+                          dataType="numeric"
+                          name="Humidity"
+                          precision="5"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Weather]"
+                          name="Weather" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMin]"
+                          dataType="numeric"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMin]"
+                          name="TempMin"
+                          precision="5"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMax]"
+                          dataType="numeric"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[TempMax]"
+                          name="TempMax"
+                          precision="5"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Humidity]"
+                          dataType="numeric"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[Humidity]"
+                          name="Humidity"
+                          precision="5"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
               </components>
+              <paths>
+                <path
+                  refId="Package\FELC\DFT Stage File.Paths[Derived Column Output]"
+                  endId="Package\FELC\DFT Stage File\OLE_DST Staging Table.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\FELC\DFT Stage File\DER New Columns and conversions.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\FELC\DFT Stage File.Paths[OLE DB Source Output]"
+                  endId="Package\FELC\DFT Stage File\DER New Columns and conversions.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FELC\DFT Stage File\OLE_SRC Get From JSON.Outputs[OLE DB Source Output]" />
+              </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1159,8 +832,7 @@ namespace SC_5d116573a5ab478abce0a1b49ad88e64.Properties {
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1512,7 +1184,12 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
 
         }
 
-        
+
+        public class Output
+        {
+            public string name { get; set; }
+            public string[] results { get; set; }
+        }
     }
 }]]></ProjectItem>
               <ProjectItem
@@ -1536,7 +1213,7 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0
     <msb:CodeName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_abacfdc674a64bdd8d748277951d3a3c</msb:DisplayName>
-    <msb:ProjectId>{41161575-E277-45EE-8B71-27B9B5E433B5}</msb:ProjectId>
+    <msb:ProjectId>{BAA14462-E30E-4509-98D8-6B7827AA5F18}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_abacfdc674a64bdd8d748277951d3a3c.csproj" />
@@ -1660,14 +1337,14 @@ namespace ST_f84653afcd474c0e95417877c3f4a9f0.Properties {
               <BinaryItem
                 Name="ST_abacfdc674a64bdd8d748277951d3a3c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDANroe10AAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAA+i8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE3wfV0AAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAUjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKgvAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAAxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAABAAAAAgAAAAEAAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADc
-LwAAAAAAAEgAAAACAAUA1CEAABwNAAABAAAAAAAAAPAuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAWBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA0
+MQAAAAAAAEgAAAACAAUA9CEAAFQOAAABAAAAAAAAAEgwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBgD/AAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
 AAAKbxQAAAoKAigQAAAKbxEAAApyJQAAcG8SAAAKbxMAAApvFAAACiYCKBAAAApvEQAACnJDAABw
 bxIAAApvEwAACm8UAAAKJgIoEAAACm8RAAAKcm8AAHBvEgAACm8TAAAKbxQAAAoLBnKPAABwBygV
@@ -1675,97 +1352,106 @@ AAAKCnMWAAAKBm8XAAAKDAIoEAAACm8RAAAKcp8AAHBvEgAACghvGAAACt48DQIoEAAACm8ZAAAK
 FnLDAABwct0AAHAJbxoAAAooGwAACn4cAAAKFm8dAAAKJgIoEAAAChdvHgAACt4AAigQAAAKFm8e
 AAAKKgABEAAAAACNACm2ADwPAAABHgIoHwAACioeAiggAAAKKq5+AQAABC0ecg0BAHDQAwAAAigh
 AAAKbyIAAApzIwAACoABAAAEfgEAAAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCQAAAoqLnMI
-AAAGgAMAAAQqAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADMAwAAI34AADgE
-AADQBQAAI1N0cmluZ3MAAAAACAoAAIABAAAjVVMAiAsAABAAAAAjR1VJRAAAAJgLAACEAQAAI0Js
-b2IAAAAAAAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAAIAAAAAQAAAADAAAACQAAAAEAAAAkAAAA
-EAAAAAEAAAACAAAAAwAAAAQAAAABAAAABAAAAAEAAAAAAK4DAQAAAAAABgBFAqEEBgDUAqEEBgCR
-AY4EDwAVBQAABgC+AScEBgAoAicEBgAJAicEBgC7AicEBgBlAicEBgB+AicEBgDVAScEBgDwAQwD
-CgCZAl0DCgAQAV0DBgA5BN8DBgB0AY4EBgCEBd8DBgBTBMEEBgBDBBIEDgBEAZgDDgClAZgDDgAs
-Af0DBgBZAaEECgCGA10DEgBXBcMAEgCWAMMABgA3A98DDgCxBYsFCgBjBF0DBgDjAN8DBgCfAN8D
-BgC/BScEAAAAACUAAAAAAAEAAQABABAA8gMBADkAAQABAAAAEADIBCQFRQABAAMAAAEQAGEFJAVZ
-AAMABwARAOYDigARAAABjgARAHoAkgBQIAAAAACGAPgDBgABAGwhAAAAAIYYgQQGAAEAdCEAAAAA
-gxiBBAYAAQB8IQAAAACTCE8ElgABAKghAAAAAJMI6ACbAAEAryEAAAAAkwj0AKAAAQC3IQAAAACW
-CJYFpgACAL4hAAAAAIYYgQQGAAIAxiEAAAAAkRiHBKsAAgAAAAEABgMJAIEEAQARAIEEBgAZAIEE
-CgApAIEEEAAxAIEEEAA5AIEEEABBAIEEEABJAIEEEABRAIEEEABZAIEEEABhAIEEEABpAIEEBgCB
-AIEEBgCpAIEEFQC5AIEEBgBxAGoFIwDBAFMFKADJANYDLQDRAPICMwCJADUDNwDZAH0FOwDhAIEE
-BgDhACYDQgDRAPwCRwDBAHIFTAB5AIoANwDZAH0FUQDZAMgFVwDpAHcEWgDBAKIFAQBxAIEEBgCJ
-AIEEBgDxALEAYwDxALsFagCRAIEEcACxAIEEBgApAHMA5gAuAAsAvgAuABMAxwAuABsA5gAuACMA
-7wAuACsAGAEuADMAGAEuADsAGAEuAEMA7wAuAEsAHgEuAFMAGAEuAFsANQFDAGMAfwFJAHMA5gBh
-AHsAfwFjAGsAfwEbAAMAAQAEAAMAAABTBK8AAAAIAbQAAACaBbkAAgAEAAMAAgAFAAUAAQAGAAUA
-AgAHAAcABIAAAAEAAAAbHHWNAAAAAAAAVgAAAAQAAAAAAAAAAAAAAHgATQAAAAAADgAAAAAAAAAA
-AAAAgQA+AwAAAAAEAAAAAAAAAAAAAAB4AN8DAAAAAA4AAAAAAAAAAAAAAIEALgAAAAAAAAAAAAEA
-AADSBAAAAAAAU1RfZjg0NjUzYWZjZDQ3NGMwZTk1NDE3ODc3YzNmNGE5ZjAAPE1vZHVsZT4ATWlj
-cm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAG1zY29ybGliAFNUX2FiYWNmZGM2NzRhNjRiZGQ4
-ZDc0ODI3Nzk1MWQzYTNjAGRlZmF1bHRJbnN0YW5jZQBnZXRfTWVzc2FnZQBWYXJpYWJsZQBSdW50
-aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5S
-dW50aW1lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFS
-VFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93
-c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2Rl
-QXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFz
-c2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJh
-bWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURl
-c2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1i
-bHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRU
-YXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNv
-bXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVu
-dGltZS5WZXJzaW9uaW5nAERvd25sb2FkU3RyaW5nAFRvU3RyaW5nAE1pY3Jvc29mdC5TcWxTZXJ2
-ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNj
-cmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF9hYmFjZmRjNjc0YTY0YmRk
-OGQ3NDgyNzc5NTFkM2EzYy5kbGwAZ2V0X0l0ZW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1h
-aW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxl
-Y3Rpb24ARXhjZXB0aW9uAEN1bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIARXZlbnRzT2Jq
-ZWN0V3JhcHBlcgBGaXJlRXJyb3IALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
-ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfZjg0NjUzYWZj
-ZDQ3NGMwZTk1NDE3ODc3YzNmNGE5ZjAuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
-YnVnZ2luZ01vZGVzAFNUX2Y4NDY1M2FmY2Q0NzRjMGU5NTQxNzg3N2MzZjRhOWYwLlByb3BlcnRp
-ZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBnZXRfRHRzAGdldF9FdmVudHMAQ29uY2F0AE9iamVj
-dABTeXN0ZW0uTmV0AGdldF9EZWZhdWx0AHNldF9UYXNrUmVzdWx0AFdlYkNsaWVudABnZXRfQXNz
-ZW1ibHkARW1wdHkAAAAAI1UAcwBlAHIAOgA6AEMAaQB0AHkARgBpAGwAZQBVAFIATAAAHVUAcwBl
-AHIAOgA6AEMAaQB0AHkATgBhAG0AZQAAK1UAcwBlAHIAOgA6AEMAdQByAHIAZQBuAHQARgBpAGwA
-ZQBOAGEAbQBlAAAfJABQAHIAbwBqAGUAYwB0ADoAOgBBAHAAaQBJAGQAAA8mAGEAcABwAGkAZAA9
-AAAjVQBzAGUAcgA6ADoASgBzAG8AbgBDAG8AbgB0AGUAbgB0AAAZUwBDAFIAIABHAGUAdAAgAEoA
-cwBvAG4AAC9FAHIAcgBvAHIAIABkAHUAcgBpAG4AZwAgAEEAUABJACAAYwBhAGwAbAA6ACAAAHFT
-AFQAXwBmADgANAA2ADUAMwBhAGYAYwBkADQANwA0AGMAMABlADkANQA0ADEANwA4ADcANwBjADMA
-ZgA0AGEAOQBmADAALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAS
-YbsnkCAZT4QQQHjKob1AAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFRBwcEDg4OEj0EIAASYQQg
-ABJlBSABEmkcAyAAHAMgAA4GAAMODg4OBCABDg4EIAEBHAQgABJ1BQACDg4OAgYOCCAFAggODg4I
-BgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2AgMyRAwYSSQMGEk0DBhIQBAAAEkkE
-AAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5v
-bkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfZjg0NjUzYWZjZDQ3NGMwZTk1NDE3ODc3
-YzNmNGE5ZjAAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOQAASQEAGi5ORVRGcmFtZXdvcmss
-VmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUE
-AQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNj
-b3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1i
-NzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAA
-AAAAAAAAUEFEUEFEULQAAADQLwAAAAAAAAAAAADqLwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-3C8AAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAA
-AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
-AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQB1jRscAAABAHWNGxw/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
-RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
-AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
-MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
-AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
-AAAAAFMAVABfAGYAOAA0ADYANQAzAGEAZgBjAGQANAA3ADQAYwAwAGUAOQA1ADQAMQA3ADgANwA3
-AGMAMwBmADQAYQA5AGYAMAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA3ADEAOQA1AC4AMwA2ADIAMQAzAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
-AFMAVABfAGEAYgBhAGMAZgBkAGMANgA3ADQAYQA2ADQAYgBkAGQAOABkADcANAA4ADIANwA3ADkA
-NQAxAGQAMwBhADMAYwAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
-AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA5AAAAKgABAAEATABlAGcAYQBsAFQA
-cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
-AGEAbQBlAAAAUwBUAF8AYQBiAGEAYwBmAGQAYwA2ADcANABhADYANABiAGQAZAA4AGQANwA0ADgA
-MgA3ADcAOQA1ADEAZAAzAGEAMwBjAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
-AGUAAAAAAFMAVABfAGYAOAA0ADYANQAzAGEAZgBjAGQANAA3ADQAYwAwAGUAOQA1ADQAMQA3ADgA
-NwA3AGMAMwBmADQAYQA5AGYAMAAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4ANwAxADkANQAuADMANgAyADEAMwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANwAxADkANQAuADMANgAyADEAMwAAAAAAAAAAAAAAAAAA
+AAAGgAMAAAQqHgJ7BAAABCoiAgN9BAAABCoeAnsFAAAEKiICA30FAAAEKkJTSkIBAAEAAAAAAAwA
+AAB2NC4wLjMwMzE5AAAAAAUAbAAAAIwEAAAjfgAA+AQAADAGAAAjU3RyaW5ncwAAAAAoCwAAgAEA
+ACNVUwCoDAAAEAAAACNHVUlEAAAAuAwAAJwBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkDAAAA+gEz
+ABYAAAEAAAAgAAAABQAAAAUAAAAOAAAAAwAAACQAAAAWAAAAAQAAAAMAAAAFAAAACAAAAAEAAAAE
+AAAAAQAAAAEAAAAAAO8DAQAAAAAABgCGAuIEBgAVA+IEBgDSAc8EDwBWBQAABgD/AWgEBgBpAmgE
+BgBKAmgEBgD8AmgEBgCmAmgEBgC/AmgEBgAWAmgEBgAxAk0DCgDaAp4DCgBRAZ4DBgB6BCAEBgDd
+BSAEBgCaAeIEBgC1Ac8EBgCUBAIFBgCEBFMEDgCFAdkDDgDmAdkDDgBtAT4ECgDHA54DEgCYBQQB
+EgDFAAQBBgB4AyAEDgAKBuQFCgCkBJ4DBgAkASAEBgDOACAEBgAfBmgEAAAAACUAAAAAAAEAAQAB
+ABAAMwQBADkAAQABAAAAEAAJBWUFQQABAAMAAAEQAKIFZQVdAAMABwACABAAFAYAAEEABAAKABEA
+JwSKABEAQQGOABEAqQCSAAEAegBXAAEAkACWAFAgAAAAAIYAOQQGAAEAbCEAAAAAhhjCBAYAAQB0
+IQAAAACDGMIEBgABAHwhAAAAAJMIkASaAAEAqCEAAAAAkwgpAZ8AAQCvIQAAAACTCDUBpAABALch
+AAAAAJYI7wWqAAIAviEAAAAAhhjCBAYAAgDGIQAAAACRGMgErwACANIhAAAAAIYI8gA3AAIA2iEA
+AAAAhgj7ABAAAgDjIQAAAACGCLMFswADAOshAAAAAIYIvwW4AAMAdCEAAAAAhhjCBAYABAAAAAEA
+RwMAAAEARwMAAAEARwMJAMIEAQARAMIEBgAZAMIECgApAMIEEAAxAMIEEAA5AMIEEABBAMIEEABJ
+AMIEEABRAMIEEABZAMIEEABhAMIEEABpAMIEBgCJAMIEBgCRAMIEBgCxAMIEFQBxAKsFIwDBAJQF
+KADJABcELQDRADMDMwCBAHYDNwDZANYFOwDhAMIEBgDhAGcDQgDRAD0DRwDBAMsFTAB5ALkANwDZ
+ANYFUQDZACgGVwDpALgEWgDBAPsFAQBxAMIEBgCBAMIEBgDxAOAAYwDxABsGagCZAMIEcAC5AMIE
+BgApAHsA/gAuAAsA1gAuABMA3wAuABsA/gAuACMABwEuACsAMAEuADMAMAEuADsAMAEuAEMABwEu
+AEsANgEuAFMAMAEuAFsATQFDAGMAlwFJAHsA/gBhAGsAlwFjAHMAlwGBAGsAlwGhAGsAlwFAAWsA
+lwFgAWsAlwGAAWsAlwGgAWsAlwEbAAMAAQAEAAMABQAEAAAAlAS+AAAASQHDAAAA8wXIAAAA/wDN
+AAAAwwXRAAIABAADAAIABQAFAAEABgAFAAIABwAHAAIACgAJAAEACwAJAAIADAALAAEADQALAASA
+AAABAAAAHRyuPwAAAAAAAFYAAAAEAAAAAAAAAAAAAAB4AE0AAAAAAA4AAAAAAAAAAAAAAIEAfwMA
+AAAABAAAAAAAAAAAAAAAeAAgBAAAAAAOAAAAAAAAAAAAAACBAC4AAAAAAAAAAAABAAAAEwUAAAUA
+AgAAAABTVF9mODQ2NTNhZmNkNDc0YzBlOTU0MTc4NzdjM2Y0YTlmMAA8TW9kdWxlPgBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAbXNjb3JsaWIAU1RfYWJhY2ZkYzY3NGE2NGJkZDhkNzQ4
+Mjc3OTUxZDNhM2MAPG5hbWU+a19fQmFja2luZ0ZpZWxkADxyZXN1bHRzPmtfX0JhY2tpbmdGaWVs
+ZABkZWZhdWx0SW5zdGFuY2UAZ2V0X01lc3NhZ2UAVmFyaWFibGUAUnVudGltZVR5cGVIYW5kbGUA
+R2V0VHlwZUZyb21IYW5kbGUAZ2V0X25hbWUAc2V0X25hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5E
+dHMuUnVudGltZQBUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBW
+U1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9y
+QnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2Vy
+Q29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0
+ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdl
+dEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1i
+bHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFz
+c2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2Ny
+aXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRp
+bWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQBzZXRfVmFsdWUAdmFsdWUAU3lzdGVt
+LlJ1bnRpbWUuVmVyc2lvbmluZwBEb3dubG9hZFN0cmluZwBUb1N0cmluZwBNaWNyb3NvZnQuU3Fs
+U2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFz
+awBTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfYWJhY2ZkYzY3NGE2
+NGJkZDhkNzQ4Mjc3OTUxZDNhM2MuZGxsAGdldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBTY3Jp
+cHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5S
+ZWZsZWN0aW9uAEV4Y2VwdGlvbgBDdWx0dXJlSW5mbwBnZXRfUmVzb3VyY2VNYW5hZ2VyAEV2ZW50
+c09iamVjdFdyYXBwZXIARmlyZUVycm9yAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MA
+U3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNUX2Y4NDY1
+M2FmY2Q0NzRjMGU5NTQxNzg3N2MzZjRhOWYwLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNl
+cwBEZWJ1Z2dpbmdNb2RlcwBTVF9mODQ2NTNhZmNkNDc0YzBlOTU0MTc4NzdjM2Y0YTlmMC5Qcm9w
+ZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAZ2V0X0R0cwBnZXRfcmVzdWx0cwBzZXRfcmVz
+dWx0cwBnZXRfRXZlbnRzAENvbmNhdABPYmplY3QAU3lzdGVtLk5ldABnZXRfRGVmYXVsdABzZXRf
+VGFza1Jlc3VsdABXZWJDbGllbnQAT3V0cHV0AGdldF9Bc3NlbWJseQBFbXB0eQAAAAAjVQBzAGUA
+cgA6ADoAQwBpAHQAeQBGAGkAbABlAFUAUgBMAAAdVQBzAGUAcgA6ADoAQwBpAHQAeQBOAGEAbQBl
+AAArVQBzAGUAcgA6ADoAQwB1AHIAcgBlAG4AdABGAGkAbABlAE4AYQBtAGUAAB8kAFAAcgBvAGoA
+ZQBjAHQAOgA6AEEAcABpAEkAZAAADyYAYQBwAHAAaQBkAD0AACNVAHMAZQByADoAOgBKAHMAbwBu
+AEMAbwBuAHQAZQBuAHQAABlTAEMAUgAgAEcAZQB0ACAASgBzAG8AbgAAL0UAcgByAG8AcgAgAGQA
+dQByAGkAbgBnACAAQQBQAEkAIABjAGEAbABsADoAIAAAcVMAVABfAGYAOAA0ADYANQAzAGEAZgBj
+AGQANAA3ADQAYwAwAGUAOQA1ADQAMQA3ADgANwA3AGMAMwBmADQAYQA5AGYAMAAuAFAAcgBvAHAA
+ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAANrUfZqbMNxFpemmKEd33JMABCABAQgD
+IAABBSABARERBCABAQ4FIAEBEVUHBwQODg4SPQQgABJhBCAAEmUFIAESaRwDIAAcAyAADgYAAw4O
+Dg4EIAEODgQgAQEcBCAAEnUFAAIODg4CBg4IIAUCCA4ODggGAAESeRF9BSAAEoCBByACAQ4SgIEI
+t3pcVhk04IkIiYRdzYCAzJEDBhJNAwYSUQMGEhADBh0OBAAAEk0EAAASUQUAAQESUQQAABIQAwAA
+AQQgAB0OBSABAR0OBAgAEk0ECAASUQQIABIQAygADgQoAB0OCAEACAAAAAAAHgEAAQBUAhZXcmFw
+Tm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF9mODQ2NTNhZmNkNDc0YzBlOTU0MTc4
+NzdjM2Y0YTlmMAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDE5AABJAQAaLk5FVEZyYW1ld29y
+ayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQu
+NQQBAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBt
+c2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+PWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAA
+AAAAAAAAAABQQURQQURQtAAAACgxAAAAAAAAAAAAAEIxAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAA0MQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAK4/HRwAAAEArj8dHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
+AAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3ADcA
+YwAzAGYANABhADkAZgAwAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADcAMQA5ADcALgAxADYAMwAwADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+UwBUAF8AYQBiAGEAYwBmAGQAYwA2ADcANABhADYANABiAGQAZAA4AGQANwA0ADgAMgA3ADcAOQA1
+ADEAZAAzAGEAMwBjAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADkAAAAqAAEAAQBMAGUAZwBhAGwAVABy
+AGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4A
+YQBtAGUAAABTAFQAXwBhAGIAYQBjAGYAZABjADYANwA0AGEANgA0AGIAZABkADgAZAA3ADQAOAAy
+ADcANwA5ADUAMQBkADMAYQAzAGMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
+ZQAAAAAAUwBUAF8AZgA4ADQANgA1ADMAYQBmAGMAZAA0ADcANABjADAAZQA5ADUANAAxADcAOAA3
+ADcAYwAzAGYANABhADkAZgAwAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA3ADEAOQA3AC4AMQA2ADMAMAAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADEAOQA3AC4AMQA2ADMAMAAyAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAD8PwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAFQxAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1774,7 +1460,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </ScriptProject>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1836,7 +1522,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL Truncate Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{11274A9A-335E-43E0-8B79-1B0661090EE1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1847,7 +1532,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DF9276A1-F73E-4851-89D7-54EC63186BBE}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.MetOffice" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.OpenWeather_Current" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1977,13 +1662,86 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\FELC\DFT Stage File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164,42"
-          Id="Package\FELC\DFT Stage File\SCC Json to Table"
-          TopLeft="377,55" />
+          Size="198,42"
+          Id="Package\FELC\DFT Stage File\OLE_SRC Get From JSON"
+          TopLeft="602,85" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\FELC\DFT Stage File\DER New Columns and conversions"
+          TopLeft="576,188" />
+        <EdgeLayout
+          Id="Package\FELC\DFT Stage File.Paths[OLE DB Source Output]"
+          TopLeft="700,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\FELC\DFT Stage File\OLE_DST Staging Table"
+          TopLeft="611,302" />
+        <EdgeLayout
+          Id="Package\FELC\DFT Stage File.Paths[Derived Column Output]"
+          TopLeft="702.75,230">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC\DFT Stage File\OLE_SRC Get From JSON">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC\DFT Stage File\OLE_DST Staging Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
