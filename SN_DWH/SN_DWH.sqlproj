@@ -72,11 +72,13 @@
     <Build Include="Security\olap.sql" />
     <Build Include="olap\Tables\DimTime.sql" />
     <Build Include="olap\Tables\FactWeather_Historical.sql" />
-    <Build Include="olap\Tables\FactWeather_Daily.sql" />
+    <Build Include="olap\Tables\FactWeather_Forecast.sql" />
     <Build Include="olap\Tables\DimGeography.sql" />
     <Build Include="transform\Tables\FactWeather_Historical.sql" />
     <Build Include="transform\Stored Procedures\prc_Load_FactWeather_Historical.sql" />
     <Build Include="Security\transform.sql" />
+    <Build Include="transform\Tables\FactWeather_Forecast.sql" />
+    <Build Include="transform\Stored Procedures\prc_Load_FactWeather_Forecast.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
