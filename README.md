@@ -46,6 +46,8 @@ Please note that:
 
 ## Final Considerations
 
-This test took me more than 4h, mostly because I had never had to ingest data from APIs and tried a couple of different approaches before sticking to the simplest one, considering that SQL Server supports JSON natively from version 2016 onwards.
+This test took me more than 4h, mostly because I had never had to ingest data from APIs and tried a couple of different approaches before sticking to the simplest one, considering that SQL Server supports JSON natively from version 2016 onwards. 
+
+I tried to create an architecture as close to a real one as possible, but in a real-world solution I'd have created Master SSIS packages for orchestration and standardised logs and error handling.
 
 I also spent some time testing the deployment scripts and, for various reasons, I didn't manage to sit down and do it only in one go. Unfortunately I had to do parts of it in different days.
