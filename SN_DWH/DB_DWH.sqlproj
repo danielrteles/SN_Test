@@ -90,15 +90,28 @@
   <ItemGroup>
     <None Include="Scripts\PDS_PopulateStaticDimensions.sql" />
     <PostDeploy Include="Scripts\PDS_Organiser.sql" />
+    <None Include="Scripts\PDS_SSIS_Environments.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\PDS_HistoricalJob.sql" />
     <None Include="Scripts\PDS_IncrementalJob.sql" />
   </ItemGroup>
   <ItemGroup>
+    <SqlCmdVariable Include="AdminDB">
+      <DefaultValue>DB_Admin</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="DataWarehouseDB">
+      <DefaultValue>DB_DWH</DefaultValue>
+      <Value>$(SqlCmdVar__3)</Value>
+    </SqlCmdVariable>
     <SqlCmdVariable Include="SQLServerName">
       <DefaultValue>localhost</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="StagingDB">
+      <DefaultValue>DB_Staging</DefaultValue>
+      <Value>$(SqlCmdVar__4)</Value>
     </SqlCmdVariable>
   </ItemGroup>
 </Project>

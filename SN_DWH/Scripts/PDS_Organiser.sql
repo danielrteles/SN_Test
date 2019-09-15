@@ -10,7 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-
 :r .\PDS_PopulateStaticDimensions.sql
+:r .\PDS_SSIS_Environments.sql
 :r .\PDS_HistoricalJob.sql
 :r .\PDS_IncrementalJob.sql
