@@ -68,6 +68,9 @@
     <Build Include="olap\Tables\DimDate.sql" />
     <Build Include="Security\olap.sql" />
     <Build Include="olap\Tables\DimTime.sql" />
+    <Build Include="olap\Tables\FactWeather_Historical.sql" />
+    <Build Include="olap\Tables\FactWeather_Daily.sql" />
+    <Build Include="olap\Tables\DimGeography.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
