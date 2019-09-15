@@ -10,8 +10,8 @@ BEGIN
     ,       t.MaxTemperature
     ,       t.Humidity
     FROM    transform.FactWeather_Current t
-    JOIN    olap.DimDate dd         ON dd.FullDate = CONVERT(DATE, t.FullDateTime)
-    JOIN    olap.DimTime dt         ON dt.StartTime = CONVERT(TIME, t.FullDateTime)
+    JOIN    olap.DimDate dd         ON dd.FullDate = CONVERT(DATE, t.CurrentDate)
+    JOIN    olap.DimTime dt         ON dt.TimeKey = t.CurrentHour
     JOIN    olap.DimGeography dg    ON dg.CityName = t.CityName
                                     AND dg.CountryName = t.CountryName
     WHERE   t.RecordAction = 'I'
@@ -22,8 +22,8 @@ BEGIN
     ,       MaxTemperature  = t.MaxTemperature
     ,       Humidity        = t.Humidity
     FROM    transform.FactWeather_Current t
-    JOIN    olap.DimDate dd                 ON dd.FullDate = CONVERT(DATE, t.FullDateTime)
-    JOIN    olap.DimTime dt                 ON dt.StartTime = CONVERT(TIME, t.FullDateTime)
+    JOIN    olap.DimDate dd                 ON dd.FullDate = CONVERT(DATE, t.CurrentDate)
+    JOIN    olap.DimTime dt                 ON dt.TimeKey = t.CurrentHour
     JOIN    olap.DimGeography dg            ON dg.CityName = t.CityName
                                             AND dg.CountryName = t.CountryName
     JOIN    olap.FactWeather_Current fwf   ON fwf.GeographyKey = dg.GeographyKey

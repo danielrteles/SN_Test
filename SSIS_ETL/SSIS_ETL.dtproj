@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-BJEU414</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAAAjfaSBHvE+YDCBZxyUUsc8vaCnab1GAfu/uuJbvpwNcQAAAAAOgAAAAAIAACAAAACMoYvL224qsCOeEL7IiouIP2A8y9g15JR5fWJMaZtTOZAAAACh1h+DjyIUa/8dwQ1cySv8uUXD8MhdqeURLrXnhhRJVgZhuEDIAn9j2vM5pq9oJbocDfoPYRHaojxRNO2Yxo99J/7+1F8prKV976Ug85yxvtgtmZ7Cz9nseqeD38/+qB9snbL//25MTL0clqf4notnhDj6QxCbX0GiWoN7cSskyDyELyqIWLLpFuoNLaHRPZ1AAAAAY2yXpG+iRASdzunZxPh6Yx4KgF0H6pCc3rBHN8KsSgOaVKK3jvpqzy0vq9mKnLAjfPkyu/Z1j5/v04y5dQ0v8Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVF47qG9QU+YUv3jqzGeeQAAAAACAAAAAAAQZgAAAAEAACAAAAAkjWuxjBPdno5VjoTnhUxk2TVn7Q40364iBDW6wp98UgAAAAAOgAAAAAIAACAAAAC3SFRFoCr6F/QUQqMonbxJKKrjuksyyDuWSSGfZufvlJAAAAASKjg0EzfWngNdF/tSsHKyCW5Lwo/+zEs/iYAKzl/c0JjNjvq+P5wT5ISHdgSGA1BNyrJgk5mU5Q1aA2oCu9/O0kJvjzuR7ITmvwOliEgxpWF8ptQvI2Ieid0W/n2Ki9v39t0RQCCc9zdWLIoAIJkC53IgFuaEIZS5a5MBN+Ygb06X7qVfsqnnaFZ8d20KK/1AAAAAIrCsDLiS8rmbFgUw0Mp3+2nhxyLLqLvnJJUdzWMtbKgDbyNIk+YoI7Maw5Qda+CnFsgu+GI1dUZ+EUGEs3cK+A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,6 +36,7 @@
           <SSIS:Package SSIS:Name="DWH_Load_DimGeography.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DWH_Load_FactWeather_Historical.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DWH_Load_FactWeather_Forecast.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DWH_Load_FactWeather_Current.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="AdminDB.conmgr" />
@@ -627,10 +628,10 @@
                 <SSIS:Property SSIS:Name="Name">Staging_OpenWeather_Current</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">47</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1E1D93A1-47F7-4ED9-9E97-D08F0FFE84AE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{54627FF1-2A1B-4950-A209-7664012A35BD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -695,10 +696,27 @@
                 <SSIS:Property SSIS:Name="Name">DWH_Load_FactWeather_Forecast</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E9423782-2706-46F7-89B4-99AEF80CADEF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{205BA2C1-194D-4ED4-BD7D-1215BD4A2F9B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DWH_Load_FactWeather_Current.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{EFCF06E8-FD2F-4226-BC25-90261561A87F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DWH_Load_FactWeather_Current</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DEAA1700-179C-401E-B107-6176F3DC3954}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

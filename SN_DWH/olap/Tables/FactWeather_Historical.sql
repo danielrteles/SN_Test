@@ -7,6 +7,7 @@
     [RainMm]         DECIMAL (4, 1) NULL,
     [SunHours]       DECIMAL (4, 1) NULL,
     CONSTRAINT [FK_FactWeather_Historical_Date] FOREIGN KEY ([DateKey]) REFERENCES [olap].[DimDate] ([DateKey]),
-    CONSTRAINT [FK_FactWeather_Historical_Geography] FOREIGN KEY ([GeographyKey]) REFERENCES [olap].[DimGeography] ([GeographyKey])
+    CONSTRAINT [FK_FactWeather_Historical_Geography] FOREIGN KEY ([GeographyKey]) REFERENCES [olap].[DimGeography] ([GeographyKey]),
+    CONSTRAINT [PK_FactWeather_Historical] PRIMARY KEY CLUSTERED (GeographyKey, DateKey) 
 );
 

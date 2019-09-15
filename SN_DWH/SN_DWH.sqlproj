@@ -82,6 +82,7 @@
     <Build Include="transform\Tables\FactWeather_Current.sql" />
     <Build Include="olap\Tables\FactWeather_Current.sql" />
     <Build Include="transform\Stored Procedures\prc_Load_FactWeather_Current.sql" />
+    <Build Include="olap\Tables\FactWeather_Daily.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PDS_PopulateStaticDimensions.sql" />
